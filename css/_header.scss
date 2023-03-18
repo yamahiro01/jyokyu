@@ -1,0 +1,373 @@
+@use "mixin";
+
+/* ===============================================
+# ヘッダー
+=============================================== */
+
+.header {
+  position: fixed;  /*追従ナビのためpositionをfixedにする*/
+  top: 0;  /*ポジション設定topを0*/
+  left: 0;
+  height: 80px;  /*headerの高さを指定*/
+  width: 100vw;  /*position:fixed;にしたため、横幅100vwを設定*/
+  background-color: #FFFFFF;
+  z-index: 100;
+
+  &__inner {
+    max-width: 1280px;
+    height: inherit;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 10px;
+    padding-left: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include mixin.sp {
+      padding-right: 30px;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+
+      .header-logo {
+
+        &__img {
+          width: 136px;
+          height: 27px;
+
+          @include mixin.tab {
+            width: 100px;
+            height: 19.85px;
+            margin-top: 4px;
+          }
+        }
+      }  // .header-logo
+
+      .header-nav {
+        margin-left: 28px;
+
+        @include mixin.tab {
+          margin-left: 20px;
+        }
+
+        @include mixin.sp {
+          display: none;
+        }
+
+        &__list {
+          display: flex;
+          align-items: center;
+
+          .header-nav__item {
+
+            .header-nav__link {
+              color: #1B224C;  // aタグはcolor指定必要
+              font-size: 16px;
+              font-weight: bold;
+              line-height: 1;
+              @include mixin.afterlineHeight(1);
+
+              @include mixin.tab {
+                font-size: 14px;
+              }
+
+              @include mixin.s-tab {
+                font-size: 13px;
+              }
+            }
+          }  // .header-nav__item
+
+          li:not(:first-child) {
+            margin-left: 28px;
+
+            @include mixin.tab {
+              margin-left: 20px;
+            }
+
+            @include mixin.s-tab {
+              margin-left: 16px;
+            }
+          }
+        }  // .header-nav__list
+      }  // .header-nav
+    }  // .header-left
+
+    .header-right {
+      display: flex;
+      align-self: end;
+      margin-bottom: 15px;
+
+      @include mixin.sp {
+        align-self: center;
+        margin-bottom: 0;
+      }
+
+      &__operation {
+        align-self: flex-end;
+
+        @include mixin.sp {
+          display: none;
+        }
+
+        .hours {
+          font-size: 12px;
+          font-weight: 500;
+          line-height: 1;
+          @include mixin.afterlineHeight(1);
+        }  // .hours
+
+        .tel {
+          margin-top: 10px;
+
+          &__link {
+            display: flex;
+          }
+
+          &__icon {
+            margin-right: 5px;
+          }
+
+          &__num {
+            color: #1B224C;    // リンクはcolor指定必要
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 1;
+            @include mixin.afterlineHeight(1);
+            white-space: nowrap;
+
+            @include mixin.tab {
+              font-size: 14px;
+            }
+
+            @include mixin.s-tab {
+              font-size: 13px;
+            }
+          }
+        }  // .tel
+      }  // .header-right__operation
+
+      &__btn {
+        margin-left: 23px;
+
+        @include mixin.tab {
+          margin-left: 16px;
+        }
+
+        @include mixin.sp {
+          display: none;
+        }
+
+        .request {
+          display: inline-block;
+          background-color: #F5A623;
+          padding: 18px 43px;
+          border-radius: 5px;
+          color: #FFFFFF;
+          font-size: 14px;
+          font-weight: bold;
+          // line-height: 14px;  （リンクボタンでのline-height使用禁止）
+          // @include mixin.afterlineHeight(1);
+
+          @include mixin.tab {
+            padding: 18px 25px;
+          }
+
+          @include mixin.s-tab {
+            font-size: 13px;
+            padding: 14px 25px;
+          }
+        }
+
+        .inquiry {
+          display: inline-block;
+          background-color: #1B224C;
+          padding: 18px 26px;
+          border-radius: 5px;
+          color: #FFFFFF;
+          font-size: 14px;
+          font-weight: bold;
+          margin-left: 5px;
+          // line-height: 14px;  （リンクボタンでのline-height使用禁止）
+          // @include mixin.afterlineHeight(1);
+
+          @include mixin.tab {
+            padding: 18px 11px;
+          }
+
+          @include mixin.s-tab {
+            font-size: 13px;
+            padding: 14px 11px;
+          }
+        }
+      }  // .header-right__btn
+
+      /* ハンバーガーメニュー */
+      .c-hamburger{
+        display: none;
+
+        @include mixin.sp {
+          display: block;
+          position: relative;
+          left: 0;
+          width: 20px;
+          height: 16px;
+          background: none;
+          border: none;
+          appearance: none;
+          cursor: pointer;
+          z-index: 200;  //ドロワーメニューより数値を上げる
+        }
+
+        &__line {
+          display: none;
+
+          @include mixin.sp {
+            display: inline-block;
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            border-radius: 4px;
+            background-color: #1B224C;
+            transition: all .4s;
+          }
+        }
+
+        &__menu {
+          display: none;
+
+          @include mixin.sp {
+            display: inline-block;
+            color: #1B224C;
+            font-size: 14px;
+            position: absolute;
+            top: 20px;
+            left: -14px;
+            font-weight: bold;
+          }
+        }
+      }  // .c-hamburger
+
+      .c-hamburger span:nth-child(1){
+        top: 0;
+      }
+
+      .c-hamburger span:nth-child(2){
+        top: 7px;
+      }
+
+      .c-hamburger span:nth-child(3){
+        bottom: 0;
+      }
+
+      /* クリック時のハンバーガーメニューのスタイリング */
+      .c-hamburger.is-checked span:nth-child(1){
+        transform: translateY(7px) rotate(-45deg);
+      }
+
+      .c-hamburger.is-checked span:nth-child(2){
+        opacity: 0;
+      }
+
+      .c-hamburger.is-checked span:nth-child(3){
+        transform: translateY(-7px) rotate(45deg);
+      }
+    }  // .header-right
+
+    // スマホ用ドロワーメニュー
+    .c-drawer{
+      display: none;
+
+      @include mixin.sp {
+        display: none;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        background-color: #1B224C;  /*ハンバーガーメニュークリック時のナビゲーションメニュー背景色*/
+        top:0;
+        left: 0;
+        z-index: 100;
+      }
+    }  // .c-drawer
+
+    // ハンバーガーメニュークリック時にドロワー表示
+    .c-drawer.is-checked {
+      display: block;
+    }
+
+    // スマホ用ドロワーメニューのレイアウト
+    .drawer-header {
+      height: 80px;
+      background-color: #FFFFFF;
+      // margin-bottom: 79px;
+      margin-bottom: 50px;
+      padding-left: 15px;
+      display: flex;
+      align-items: center;
+
+      .header-logo {
+
+        img {
+          width: 100px;
+          height: 19.85px;
+          margin-top: 4px;
+          // width: 200px;
+          // height: 40px;
+
+          // @include mixin.sp {
+          //   width: 100px;
+          //   height: 19.85px;
+          //   margin-top: 4px;
+          // }
+        }
+      }
+    }  // .drawer__header
+
+    .c-drawer__list {
+      display: block;
+      text-align: center;
+
+      .c-drawer__item:not(:last-child) {
+        margin-bottom: 40px;
+      }
+
+      .c-drawer__link {
+        display: inline-block;
+        text-decoration: none;
+        color: #ffffff;
+
+        .drawer-text {
+          font-size: 20px;
+          text-shadow:
+          1px 1px #000000,  /*文字の右下に影を追加*/
+          1px -1px #000000,  /*文字の右上に影を追加*/
+          -1px 1px #000000,  /*文字の左下に影を追加*/
+          -1px -1px #000000;  /*文字の左上に影を追加*/
+
+          &:hover {
+            text-shadow: 0 0 10px #fff,0 0 15px #fff;
+          }
+        }  // .drawer__text
+      }  // .c-drawer__link
+
+      #js-request {
+        text-decoration-line: underline;
+        text-decoration-color: #F5A623;
+        text-decoration-thickness: 2px;
+        text-decoration-skip-ink: none;
+        text-underline-offset: 4px;
+      }
+
+      #js-inquiry {
+        text-decoration-line: underline;
+        text-decoration-color: #FFFFFF;
+        text-decoration-thickness: 2px;
+        text-decoration-skip-ink: none;
+        text-underline-offset: 4px;
+      }
+    }  // .c-drawer__list
+  }  // .header__inner
+}  // .header

@@ -1,0 +1,317 @@
+@use "mixin";
+
+/* ===============================================
+# フッター
+=============================================== */
+
+.footer {
+
+  &-info {
+    background-color: #1B224C;
+    height: 230px;
+    padding: 35px 0 68px;
+
+    @include mixin.sp {
+      height: fit-content;
+      padding: 20px 0 40px;
+    }
+
+    &__inner {
+      display: flex;
+      justify-content: space-between;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+
+      @include mixin.tab {
+        width: 90%;
+      }
+
+      @include mixin.sp {
+        display: block;
+      }
+
+      @include mixin.ss-sp {
+        width: 100%;
+      }
+
+      .footer-left {
+
+        // フッターメニュー
+        .footer-nav {
+          margin-top: 14px;
+
+          @include mixin.sp {
+            display: none;
+          }
+
+          &__list {
+            display: flex;
+            align-items: center;
+
+            .footer-nav__item {
+              height: 23px;
+
+              .footer-nav__link {
+                color: #F8F8F8;
+                font-size: 16px;
+                font-weight: bold;
+                line-height: 23px;
+
+                @include mixin.tab {
+                  font-size: 14px;
+                }
+
+                @include mixin.s-tab {
+                  font-size: 13px;
+                }
+              }
+            }
+
+            li:first-child {
+              padding-right: 21px;
+              border-right: 1px solid #FFFFFF;
+            }
+
+            li:nth-child(2) {
+              padding: 0 21px;
+              border-right: 1px solid #FFFFFF;
+            }
+
+            li:nth-child(3) {
+              padding: 0 21px;
+              border-right: 1px solid #FFFFFF;
+            }
+
+            li:last-child {
+              padding-left: 21px;
+            }
+          }  // .footer-nav__list
+        }  // .footer-nav
+
+        // フッターメニュー（スマホ用）
+        .sp-footer-nav {
+          display: none;
+
+          @include mixin.sp {
+            display: block;
+            margin-top: 14px;
+          }
+
+          &__list__1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .footer-nav__item {
+              width: 100px;
+              height: 23px;
+              text-align: center;
+
+              .footer-nav__link {
+                color: #F8F8F8;
+                font-size: 16px;
+                font-weight: bold;
+                line-height: 23px;
+
+                @include mixin.tab {
+                  font-size: 14px;
+                }
+
+                @include mixin.s-tab {
+                  font-size: 13px;
+                }
+              }
+            }
+
+            li:first-child {
+              padding-right: 21px;
+              border-right: 1px solid #FFFFFF;
+            }
+
+            li:last-child {
+              padding-left: 21px;
+            }
+          }  // .sp-footer-nav__list__1
+
+          &__list__2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+
+            .footer-nav__item {
+              width: 100px;
+              height: 23px;
+              text-align: center;
+
+              .footer-nav__link {
+                color: #F8F8F8;
+                font-size: 16px;
+                font-weight: bold;
+                line-height: 23px;
+
+                @include mixin.tab {
+                  font-size: 14px;
+                }
+
+                @include mixin.s-tab {
+                  font-size: 13px;
+                }
+              }
+            }
+
+            li:first-child {
+              padding-right: 21px;
+              border-right: 1px solid #FFFFFF;
+            }
+
+            li:last-child {
+              padding-left: 21px;
+            }
+          }  // .footer-nav__list__2
+        }  // .sp-footer-nav
+      }  // .footer-left
+
+      .footer-right {
+        margin-right: -17px;
+
+        @include mixin.tab {
+          margin-right: 0;
+        }
+
+        @include mixin.sp {
+          display: flex;
+          justify-content: space-evenly;
+          margin-top: 70px;
+        }
+
+        .logo-area {
+          background-color: #FFFFFF;
+          width: 197px;
+          height: 58px;
+
+          @include mixin.sp {
+            width: 140px;
+            height: 50px;
+          }
+
+          .footer-logo {
+            text-align: center;
+            padding-top: 13.5px;
+
+            @include mixin.sp {
+              padding-top: 15px;
+            }
+
+            &__img {
+              width: 159px;
+              height: 31px;
+
+              @include mixin.tab {
+                width: 100px;
+                height: 19.85px;
+                margin-top: 4px;
+              }
+
+              @include mixin.sp {
+                margin-top: 0;
+              }
+            }
+          }
+        }
+
+        &__operation {
+          // align-self: flex-end;
+
+          .tel {
+            margin-top: 27px;
+
+            @include mixin.sp {
+              margin-top: 0;
+            }
+
+            &__link {
+              display: flex;
+              justify-content: flex-end;
+            }
+
+            &__icon {
+              margin-right: 5px;
+            }
+
+            &__num {
+              color: #FFFFFF;
+              font-size: 16px;
+              font-weight: bold;
+              line-height: 1;
+              @include mixin.afterlineHeight(1);
+            }
+          }
+
+          .hours {
+            color: #FFFFFF;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 1;
+            @include mixin.afterlineHeight(1);
+            text-align: right;
+            margin-top: 13px;
+          }
+        }  // .footer-right__operation
+      }  // .footer-right
+    }  // .footer-info__inner
+  }  // .footer-info
+
+  .copyright {
+    background-color: #F8F8F8;
+    height: 36px;
+
+    &__inner {
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+
+      @include mixin.tab {
+        width: 90%;
+      }
+
+      .text {
+        font-size: 12px;
+        font-weight: bold;
+        line-height: 36px;
+        text-align: right;
+        margin-right: -17px;
+
+        @include mixin.tab {
+          margin-right: 0;
+        }
+
+        @include mixin.sp {
+          text-align: center;
+        }
+      }
+    }
+  }
+}  // .footer
+
+// ページトップへ戻るボタン
+.page_top {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  padding: 15px 18px;
+  color: #FFFFFF;
+  font-size: 20px;
+  text-decoration: none;
+  background: #F5A623;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  z-index: 100;
+}
+
+.page_top:hover {
+  background: #F5A623;
+  opacity: 0.7;
+}

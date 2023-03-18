@@ -1,0 +1,305 @@
+@use "mixin";
+@use "header";
+@use "contact";
+@use "footer";
+
+/* ===============================================
+# ブログメインビジュアル
+=============================================== */
+
+.blog-mv {
+  background: url(../img/blog.png) no-repeat center center/cover;
+  height: 301px;  // 固定headerぶんの位置調整（+80px）
+  padding-top: 175px;  // 固定headerぶんの位置調整（+80px）
+  text-align: center;
+
+  .main-ttl {
+    color: #FFFFFF;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 1;
+    @include mixin.afterlineHeight(1);
+
+    @include mixin.s-tab {
+      font-size: 28px;
+    }
+
+    @include mixin.sp {
+      font-size: 24px;
+    }
+  }
+}
+
+/* ===============================================
+# ブログパンくずリスト
+=============================================== */
+
+.blog-breadcrumb-area {
+  background-color: #F8F8F8;
+  height: 50px;
+
+  .breadcrumbs {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include mixin.tab {
+      width: 90%;
+    }
+
+    span {
+      color: #1B224C;  // パンくずのリンクはcolor指定必要
+      font-size: 12px;
+      line-height: 50px;
+    }
+
+    // hoverアクション（ホーム）
+    .home {
+
+      span {
+
+        &:hover {
+          font-weight: 500;
+          text-decoration: underline;
+          text-decoration-color: #1B224C;
+        }
+      }
+    }
+
+    .current-item {
+      text-decoration: none;
+    }
+  }
+}  // .blog-breadcrumb-area
+
+/* ===============================================
+# ブログメインエリア
+=============================================== */
+
+.blog-main {
+
+  &__inner {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include mixin.tab {
+      width: 90%;
+    }
+
+    @include mixin.sp {
+      width: 70%;
+    }
+
+    .new-blog {
+      background-color: #FFFFFF;
+      padding: 58px 0 109px;
+
+      .main-ttl {
+        font-size: 32px;
+        font-weight: bold;
+        line-height: 1;
+        @include mixin.afterlineHeight(1);
+        text-align: center;
+
+        @include mixin.s-tab {
+          font-size: 28px;
+        }
+
+        @include mixin.sp {
+          font-size: 24px;
+        }
+      }
+
+      .blog-list {
+
+        // 各新着ブログ
+        &__loop {
+          display: flex;
+          position: relative;
+          margin-top: 60px;
+
+          @include mixin.sp {
+            display: block;
+          }
+
+          .blog-category {
+            height: 28px;
+            background-color: #1B224C;
+            padding: 0 10px;
+            color: #FFFFFF;
+            font-size: 12px;
+            font-weight: 500;
+            position: absolute;
+            top: 0;
+            left: 0;
+            text-align: center;
+            line-height: 28px;
+          }
+
+          .blog__photo {
+            margin: 0;
+
+            .blog__img {
+              width: 240px;
+              height: 179px;
+              object-fit: cover;
+              vertical-align: bottom;
+
+              @include mixin.sp {
+                width: 100%;
+              }
+            }
+          }
+
+          .sentence {
+            margin-left: 50px;
+
+            @include mixin.sp {
+              margin-left: 0;
+            }
+
+            &__date {
+              font-size: 16px;
+              font-weight: 500;
+              line-height: 1;
+              @include mixin.afterlineHeight(1);
+
+              @include mixin.sp {
+                margin-top: 20px;
+              }
+            }
+
+            &__link {
+              display: block;
+              color: #1B224C;  // リンクはcolor指定必要
+              font-size: 26px;
+              font-weight: bold;
+              line-height: 1.5;
+              @include mixin.afterlineHeight(1.5);
+              text-decoration: underline;
+              text-decoration-color: #1B224C;
+              text-decoration-thickness: 1px;
+              text-decoration-skip-ink: none;
+              margin-top: 20px;
+
+              @include mixin.s-tab {
+                font-size: 22px;
+                -ms-word-wrap: break-word;
+                word-wrap: break-word;
+                max-width: 400px;
+              }
+            }
+
+            &__excerpt {
+              display: block;
+              margin-top: 20px;
+
+              // テンプレートタグ使用によって出現したpタグ
+              p {
+                color: #1B224C;  // リンクはcolor指定必要
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 1.5;
+                @include mixin.afterlineHeight(1.5);
+              }
+            }
+          }  // .sentence
+        }  // .blog-list__loop
+      }  //.blog-list
+    }  // .new-blog
+  }  // .blog-main__inner
+}  // .blog-main
+
+/* ===============================================
+# ページネーション
+=============================================== */
+
+// PC用ページネーション
+.pc-page {
+
+  @include mixin.sp {
+    display: none;
+  }
+
+  .nav-links {
+    text-align: center;
+    margin-bottom: 45px;
+
+    .page-numbers {
+      display: inline-block;
+      background: #FFFFFF;
+      padding: 17px 20px;
+      color: #1B224C;
+      font-weight: bold;
+      border: 1px solid #1B224C;
+      margin-right: 16px;
+    }
+
+    .current {
+      background: #1B224C;
+      padding: 17px 20px;
+      font-weight: bold;
+      color: #FFFFFF;
+    }
+
+    .next {
+      display: none;
+    }
+
+    .prev {
+      display: none;
+    }
+
+    .dots {
+      border: none;
+      font-weight: bold;
+      padding-left: 17px;
+      padding-right: 17px;
+    }
+  }
+}  // .pc-page
+
+// スマホ用ページネーション
+.sp-page {
+  display: none;
+
+  @include mixin.sp {
+    display: block;
+  }
+
+  .pagination {
+    margin-bottom: 45px;
+
+    ul {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      .prev-first {
+        background: #CCCCCC;
+        padding: 19.4px 20px;
+        font-weight: bold;
+        color: #747474;
+        // margin-right: 10px;
+      }
+
+      a {
+        background: #1B224C;
+        padding: 17px 20px;
+        font-weight: bold;
+        color: #FFFFFF;
+        // margin-left: 10px;
+        // margin-right: 10px;
+      }
+
+      .next-last {
+        background: #CCCCCC;
+        padding: 19.4px 20px;
+        font-weight: bold;
+        color: #747474;
+        // margin-left: 10px;
+      }
+    }
+  }
+}  // .sp-page

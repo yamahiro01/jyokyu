@@ -1,0 +1,383 @@
+@use "mixin";
+@use "header";
+@use "footer";
+
+/* ===============================================
+# お問い合わせ・資料請求メインビジュアル
+=============================================== */
+
+.form-mv {
+  background: url(../img/cta.png) no-repeat center center/cover;
+  height: 300px;  // 固定headerぶんの位置調整（+80px）
+  padding-top: 174px;  // 固定headerぶんの位置調整（+80px）
+  text-align: center;
+
+  .main-ttl {
+    color: #FFFFFF;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 1;
+    @include mixin.afterlineHeight(1);
+
+    @include mixin.s-tab {
+      font-size: 28px;
+    }
+
+    @include mixin.sp {
+      font-size: 24px;
+    }
+  }
+}
+
+/* ===============================================
+# お問い合わせ・資料請求パンくずリスト
+=============================================== */
+
+.form-breadcrumb-area {
+  background-color: #F8F8F8;
+  height: 50px;
+
+  .breadcrumbs {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include mixin.tab {
+      width: 90%;
+    }
+
+    span {
+      color: #1B224C;  // パンくずのリンクはcolor指定必要
+      font-size: 12px;
+      line-height: 50px;
+    }
+
+    // hoverアクション（ホーム）
+    .home {
+
+      span {
+
+        &:hover {
+          font-weight: 500;
+          text-decoration: underline;
+          text-decoration-color: #1B224C;
+        }
+      }
+    }
+
+    .current-item {
+      text-decoration: none;
+    }
+  }
+}  // .form-breadcrumb-area
+
+/* ===============================================
+# お問い合わせ・資料請求フォーム
+=============================================== */
+
+// MW WP Formは何故か入れ子でCSSを指定できない
+
+form {
+  background-color: #FFFFFF;
+  padding: 58px 0 82px;
+}
+
+// インナー
+.contact-form__inner {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include mixin.s-tab {
+    width: 70%;
+  }
+
+  @include mixin.sp {
+    width: 80%;
+  }
+}
+
+// 導入文
+.contact-form__intro {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.6875;
+  @include mixin.afterlineHeight(1.6875);
+
+  @include mixin.sp {
+    font-size: 14px;
+  }
+}
+
+// フォームエリア
+.contact-form__area {
+  margin-top: 41px;
+}
+
+// 会社名ラベル
+.company__label {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  @include mixin.afterlineHeight(1);
+
+  @include mixin.sp {
+    font-size: 14px;
+  }
+}
+
+// 会社名入力エリア
+.company__area {
+  width: 100%;
+  height: 50px;
+  border: 0.5px solid #1B224C;
+  margin-top: 12px;
+  padding-left: 20px;
+}
+
+// お名前
+.name {
+  margin-top: 20px;
+}
+
+// お名前ラベル
+.name__label {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  @include mixin.afterlineHeight(1);
+
+  @include mixin.sp {
+    font-size: 14px;
+  }
+}
+
+// お名前入力エリア
+.name__area {
+  width: 100%;
+  height: 50px;
+  border: 0.5px solid #1B224C;
+  margin-top: 12px;
+  padding-left: 20px;
+}
+
+// メールアドレス
+.email {
+  margin-top: 20px;
+}
+
+// メールアドレスラベル
+.email__label {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  @include mixin.afterlineHeight(1);
+
+  @include mixin.sp {
+    font-size: 14px;
+  }
+}
+
+// メールアドレス入力エリア
+.email__area {
+  width: 100%;
+  height: 50px;
+  border: 0.5px solid #1B224C;
+  margin-top: 12px;
+  padding-left: 20px;
+}
+
+// 電話番号
+.tel {
+  margin-top: 20px;
+}
+
+// 電話番号ラベル
+.tel__label {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  @include mixin.afterlineHeight(1);
+
+  @include mixin.sp {
+    font-size: 14px;
+  }
+}
+
+// 電話番号入力エリア
+.tel__area {
+  width: 100%;
+  height: 50px;
+  border: 0.5px solid #1B224C;
+  margin-top: 12px;
+  padding-left: 20px;
+}
+
+// ラジオボタン
+.radio {
+  margin-top: 24px;
+}
+
+// ラジオボタン説明
+.radio__intro {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.6875;
+  @include mixin.afterlineHeight(1.6875);
+
+  @include mixin.sp {
+    font-size: 14px;
+  }
+
+  .sp-br {
+    display: none;
+
+    @include mixin.s-tab {
+      display: block;
+    }
+  }
+}
+
+// ラジオボタン説明（太字）
+.radio__intro_bold {
+  font-weight: bold;
+}
+
+// ラジオボタン各選択と各文章
+.mwform-radio-field label {
+  display: flex;
+  align-items: baseline;
+}
+
+// ラジオボタン各選択
+.mwform-radio-field input {
+  transform: scale(1.5385);  // safariで表示異常の為、注意！
+  margin-top: 20px;
+  margin-right: 19px;
+  position: relative;  // ラジオボタンの方を移動させ調整
+  top: 1px;
+}
+
+// ラジオボタン各文章
+.mwform-radio-field-text {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  @include mixin.afterlineHeight(1);
+  margin-left: 5px;
+
+  @include mixin.sp {
+    font-size: 14px;
+  }
+}
+
+// お問い合わせ内容
+.inquiry {
+  margin-top: 24px;
+}
+
+// お問い合わせ内容ラベル
+.inquiry__label {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  @include mixin.afterlineHeight(1);
+
+  @include mixin.sp {
+    font-size: 14px;
+  }
+}
+
+// お問い合わせ内容入力エリア
+.inquiry__area {
+  width: 100%;
+  height: 240px;
+  border: 0.5px solid #1B224C;
+  margin-top: 12px;
+  padding-top: 22px;
+  padding-left: 23px;
+}
+
+// プライバシーポリシー
+.privacy {
+  margin-top: 30px;
+  text-align: center;
+}
+
+// プライバシーポリシー説明
+.privacy__intro {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.6875;
+  @include mixin.afterlineHeight(1.6875);
+
+  @include mixin.sp {
+    font-size: 14px;
+  }
+
+  .sp-br {
+    display: none;
+
+    @include mixin.sp {
+      display: block;
+    }
+  }
+}
+
+// プライバシーポリシーのリンク部分のカラー変更
+.privacy__intro_color {
+  color: #F5A623;
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: #F5A623;
+  text-decoration-thickness: 1px;
+  text-decoration-skip-ink: none;
+}
+
+// プライバシーポリシーに同意する
+.mwform-checkbox-field {
+  display: inline-block;
+  margin-top: 31px;
+}
+
+// プライバシーポリシーに同意する（テキスト）
+.mwform-checkbox-field-text {
+  font-size: 16px;
+  font-weight: 500;
+  // line-height: 1;  チェックボックスがあるため、指定禁止
+  // @include mixin.afterlineHeight(1);
+
+  @include mixin.sp {
+    font-size: 14px;
+  }
+}
+
+// プライバシーポリシーに同意する（チェックボックス）
+.policy-check {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #707070;
+  // border-radius: 15%;
+  display: inline-flex;
+  vertical-align: text-top;
+  margin-right: 10px;
+}
+
+// 送信する
+.send {
+  text-align: center;
+  margin-top: 46px;
+}
+
+// 送信する（ボタン）
+.send__btn {
+  background-color: #1B224C;
+  width: 200px;
+  height: 50px;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 50px;
+  border-radius: 5px;
+}
+

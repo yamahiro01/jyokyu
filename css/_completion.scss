@@ -1,0 +1,84 @@
+@use "mixin";
+@use "header";
+@use "footer";
+
+/* ===============================================
+# お問い合わせ・資料請求パンくずリスト
+=============================================== */
+
+.completion-breadcrumb-area {
+  background-color: #F8F8F8;
+  height: 130px;
+  padding-top: 80px;
+
+  .breadcrumbs {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include mixin.tab {
+      width: 90%;
+    }
+
+    span {
+      color: #1B224C;  // パンくずのリンクはcolor指定必要
+      font-size: 12px;
+      line-height: 50px;
+    }
+
+    // hoverアクション（ホーム）
+    .home {
+
+      span {
+
+        &:hover {
+          font-weight: 500;
+          text-decoration: underline;
+          text-decoration-color: #1B224C;
+        }
+      }
+    }
+    .current-item {
+      text-decoration: none;
+    }
+  }
+}  // .price-breadcrumb-area
+
+/* ===============================================
+# 送信完了メッセージ
+=============================================== */
+
+.completion {
+  background-color: #FFFFFF;
+  padding: 83px 0 80px;
+  text-align: center;
+
+  &__text {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.6875;
+    @include mixin.afterlineHeight(1.6875);
+
+    @include mixin.sp {
+      font-size: 14px;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    color: #1B224C;  // aタグはcolor指定必要
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.6875;
+    @include mixin.afterlineHeight(1.6875);
+    text-decoration: underline;
+    text-decoration-color: #1B224C;
+    text-decoration-thickness: 1px;
+    text-decoration-skip-ink: none;
+    margin-top: 83px;
+
+    @include mixin.sp {
+      font-size: 14px;
+    }
+  }
+}

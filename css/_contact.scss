@@ -1,0 +1,126 @@
+@use "mixin";
+
+/* ===============================================
+# 資料請求
+=============================================== */
+
+.contact {
+  background: url(../img/cta.png) no-repeat center center/cover;
+  height: 256px;
+  padding: 70px 0 41px;
+  text-align: center;
+
+  &__inner{
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+
+    .main-ttl {
+      color: #F8F8F8;
+      font-size: 32px;
+      font-weight: bold;
+      line-height: 1;
+      @include mixin.afterlineHeight(1);
+
+      @include mixin.tab {
+        font-size: 30px;
+      }
+
+      @include mixin.sp {
+        font-size: 24px;
+      }
+    }
+
+    .contact__btn {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center; /* ADD */
+      margin-top: 25px;
+
+      .request {
+        display: inline-block;
+        background-color: #F5A623;
+        padding: 17px 108px;
+        border-radius: 25px;
+        color: #FFFFFF;
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      .inquiry {
+        display: inline-block;
+        margin-top: 22px;
+        color: #FFFFFF;
+        font-size: 16px;
+        font-weight: 500;
+        text-decoration: underline;
+      }
+    }
+  }  // .contact__inner
+}  // .contact
+
+/* ===============================================
+# お電話でのお問い合わせはこちら
+=============================================== */
+
+.phone {
+  height: 80px;
+  padding-top: 20px;
+
+  @include mixin.sp {
+    height: fit-content;
+    padding-bottom: 20px;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: baseline;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 61px;
+
+    @include mixin.sp {
+      display: block;
+      padding-left: 0;
+      text-align: center;
+    }
+
+    .phone__index {
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 1;
+      @include mixin.afterlineHeight(1);
+    }
+
+    .phone__num {
+      display: block;
+      color: #1B224C;
+      font-size: 36px;
+      font-weight: bold;
+      line-height: 1;
+      @include mixin.afterlineHeight(1);
+      margin: 0 20px;
+
+      @include mixin.tab {
+        font-size: 30px;
+      }
+
+      @include mixin.sp {
+        font-size: 24px;
+        margin-top: 10px;
+      }
+    }
+
+    .phone__hours {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1;
+      @include mixin.afterlineHeight(1);
+
+      @include mixin.sp {
+        margin-top: 5px;
+      }
+    }
+  }  // .phone__inner
+}  // .phone

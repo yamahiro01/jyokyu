@@ -1,0 +1,2348 @@
+@use "mixin";
+@use "header";
+@use "contact";
+@use "footer";
+
+/* ===============================================
+# メインビジュアル
+=============================================== */
+
+.mv {
+  background: url(../img/fv.jpg) no-repeat center 37%/cover;
+  height: 556px;  // 固定headerぶんの位置調整（+80px）
+  padding-top: 196px;  // 固定headerぶんの位置調整（+80px）
+  text-align: center;
+
+  @include mixin.sp {
+    background-position: 70% 100%;
+  }
+
+  .main-ttl {
+    color: #FFFFFF;
+    font-size: 48px;
+    font-weight: bold;
+    line-height: 1.3542;
+    @include mixin.afterlineHeight(1.3542);
+    text-shadow: 0 3px 6px rgba(0,0,0,0.16);
+
+    @include mixin.tab {
+      font-size: 40px;
+    }
+
+    @include mixin.sp {
+      font-size: 32px;
+    }
+
+    .sp-br {
+      display: none;
+
+      @include mixin.sp {
+        display: block;
+      }
+    }
+  }
+
+  .sub-ttl {
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.7222;
+    @include mixin.afterlineHeight(1.7222);
+    margin-top: 28px;
+  }
+
+  &__btn {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center; /* ADD */
+    margin-top: 51px;
+
+    .request {
+      display: inline-block;
+      background-color: #F5A623;
+      padding: 22px 98px;
+      border-radius: 31px;
+      color: #FFFFFF;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .inquiry {
+      display: inline-block;
+      margin-top: 22px;
+      color: #FFFFFF;
+      font-size: 16px;
+      font-weight: 500;
+      text-decoration: underline;
+    }
+  }
+}
+
+/* ===============================================
+# イントロダクション
+=============================================== */
+
+.intro {
+  background-color: #1B224C;
+  height: 604px;
+  padding: 63px 0 54px;
+
+  @include mixin.sp {
+    height: fit-content;
+  }
+
+  &__inner {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+    .main-ttl {
+      color: #FFFFFF;
+      font-size: 36px;
+      font-weight: bold;
+      line-height: 1.3888;
+      @include mixin.afterlineHeight(1.3888);
+
+      @include mixin.tab {
+        font-size: 30px;
+      }
+
+      @include mixin.sp {
+        font-size: 24px;
+      }
+
+      .sp-br {
+        display: none;
+
+        @include mixin.sp {
+          display: block;
+        }
+      }
+    }
+
+    .problem {
+      display: flex;
+      justify-content: center;
+      margin-top: 65px;
+
+      @include mixin.sp {
+        display: block;
+      }
+
+      &__1 {
+        color: #FFFFFF;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 2.1666;
+        @include mixin.afterlineHeight(2.1666);
+
+        @include mixin.sp {
+          font-size: 16px;
+        }
+
+        .sp-dot {
+          display: none;
+
+          @include mixin.sp {
+            display: inline;
+          }
+        }
+
+        .pc-br {
+
+          @include mixin.sp {
+            display: none;
+          }
+        }
+      }
+
+      &__2 {
+        color: #FFFFFF;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 2.1666;
+        @include mixin.afterlineHeight(2.1666);
+        margin-right: 30px;
+        margin-left: 57px;
+
+        @include mixin.sp {
+          font-size: 16px;
+          margin: 40px 0 40px;
+          position: relative;
+        }
+
+        .sp-dot {
+          display: none;
+
+          @include mixin.sp {
+            display: inline;
+          }
+        }
+
+        .pc-br {
+
+          @include mixin.sp {
+            display: none;
+          }
+        }
+      }
+
+      &__3 {
+        color: #FFFFFF;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 2.1666;
+        @include mixin.afterlineHeight(2.1666);
+
+        @include mixin.sp {
+          font-size: 16px;
+        }
+
+        .sp-dot {
+          display: none;
+
+          @include mixin.sp {
+            display: inline;
+          }
+        }
+
+        .pc-br {
+
+          @include mixin.sp {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .appeal {
+      background-color: #FFFFFF;
+      height: 248px;
+      padding: 11.5px 16px;
+      margin-top: 83px;
+
+      @include mixin.tab {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        height: fit-content;
+      }
+
+      @include mixin.sp {
+        width: 100%;
+      }
+
+      &__inner {
+        max-width: 868px;
+        height: 225px;
+        margin-left: auto;
+        margin-right: auto;
+        border: 4px solid #1B224C;
+
+        @include mixin.sp {
+          height: fit-content;
+          padding: 0 10px;
+          padding-bottom: 25px;
+        }
+
+        .headline {
+          font-size: 36px;
+          font-weight: bold;
+          line-height: 1.3888;
+          @include mixin.afterlineHeight(1.3888);
+          margin-top: 16.5px;
+          padding-bottom: -30px;
+
+          @include mixin.tab {
+            font-size: 30px;
+          }
+
+          @include mixin.sp {
+            font-size: 22px;
+          }
+
+          &__orange {
+            font-size: 36px;
+            font-weight: bold;  //spanタグ内でのline-heightの使用禁止
+            text-decoration-line: underline;
+            text-decoration-color: #F5A623;
+            text-decoration-thickness: 9px;
+            text-decoration-skip-ink: none;
+            text-underline-offset: -6px;
+
+            @include mixin.tab {
+              font-size: 30px;
+            }
+
+            @include mixin.sp {
+              font-size: 22px;
+            }
+          }
+
+          .sp-br {
+            display: none;
+
+            @include mixin.sp {
+              display: block;
+            }
+          }
+        }
+
+        .text {
+          font-size: 18px;
+          font-weight: 500;
+          line-height: 1.7222;
+          @include mixin.afterlineHeight(1.7222);
+          margin-top: 25px;
+
+          @include mixin.sp {
+            font-size: 14px;
+          }
+
+          .sp-br {
+            display: none;
+
+            @include mixin.sp {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ===============================================
+# 特徴
+=============================================== */
+
+.features {
+  background-color: #FFFFFF;
+  padding: 59px 0 39px;
+
+  @include mixin.sp {
+    padding-bottom: 0;
+  }
+
+  // リセットマージン
+  figure {
+    margin-bottom: 0;
+  }
+
+  &__inner {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include mixin.tab {
+      width: 90%;
+    }
+
+    @include mixin.sp {
+      width: 100%;
+    }
+
+    .main-ttl {
+      font-size: 36px;
+      font-weight: bold;
+      line-height: 1.3888;
+      @include mixin.afterlineHeight(1.3888);
+      text-align: center;
+
+      @include mixin.tab {
+        font-size: 30px;
+      }
+
+      @include mixin.sp {
+        font-size: 24px;
+      }
+
+      .sp-br {
+        display: none;
+
+        @include mixin.sp {
+          display: block;
+        }
+      }
+    }
+
+    // 特徴 1
+    .curriculum {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 60px;
+
+      @include mixin.sp {
+        display: block;
+        position: relative;
+      }
+
+      &__sentence {
+
+        @include mixin.sp {
+          width: 90%;
+          margin-left: auto;
+          margin-right: auto;
+          position: absolute;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          z-index: 2;  // 画像の上にテキストを乗せる時に必ず設定
+        }
+
+        .icon {
+          background-color: #F5A623;
+          width: 90px;
+          height: 30px;
+
+          &__text {
+            color: #FFFFFF;
+            font-size: 12px;
+            font-weight: 500;
+            text-align: center;
+            line-height: 30px;
+          }
+        }
+
+        .headline {
+          font-size: 26px;
+          font-weight: bold;
+          line-height: 1.5;
+          @include mixin.afterlineHeight(1.5);
+          margin-top: 35px;
+
+          @include mixin.tab {
+            font-size: 22px;
+            margin-top: 20px;
+          }
+
+          @include mixin.sp {
+            color: #FFFFFF;
+          }
+        }
+
+        .text {
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 1.6875;
+          @include mixin.afterlineHeight(1.6875);
+          margin-top: 34.5px;
+
+          @include mixin.tab {
+            margin-top: 20px;
+          }
+
+          @include mixin.s-tab {
+            font-size: 14px;
+          }
+
+          @include mixin.sp {
+            color: #FFFFFF;
+          }
+        }
+      }  // .curriculum__sentence
+
+      &__photo {
+        margin-left: 50px;
+
+        @include mixin.sp {
+          margin-left: 0;
+        }
+
+        .curriculum__img {
+          width: 350px;
+          height: 240px;
+          object-fit: cover;
+          vertical-align: bottom;
+
+          @include mixin.sp {
+            width: 100%;
+            filter: brightness(0.4);
+          }
+        }
+      }  // .curriculum__photo
+    }  // .curriculum
+
+    // 特徴 2
+    .teacher {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      margin-top: 60px;
+
+      @include mixin.sp {
+        display: block;
+        position: relative;
+        margin-top: 0;
+      }
+
+      &__sentence {
+
+        @include mixin.sp {
+          width: 90%;
+          margin-left: auto;
+          margin-right: auto;
+          position: absolute;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          z-index: 2;  // 画像の上にテキストを乗せる時に必ず設定
+        }
+
+        .icon {
+          background-color: #F5A623;
+          width: 90px;
+          height: 30px;
+
+          &__text {
+            color: #FFFFFF;
+            font-size: 12px;
+            font-weight: 500;
+            text-align: center;
+            line-height: 30px;
+          }
+        }
+
+        .headline {
+          font-size: 26px;
+          font-weight: bold;
+          line-height: 1.5;
+          @include mixin.afterlineHeight(1.5);
+          margin-top: 35px;
+
+          @include mixin.tab {
+            font-size: 22px;
+            margin-top: 20px;
+          }
+
+          @include mixin.sp {
+            color: #FFFFFF;
+          }
+        }
+
+        .text {
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 1.6875;
+          @include mixin.afterlineHeight(1.6875);
+          margin-top: 34.5px;
+
+          @include mixin.tab {
+            margin-top: 20px;
+          }
+
+          @include mixin.s-tab {
+            font-size: 14px;
+          }
+
+          @include mixin.sp {
+            color: #FFFFFF;
+          }
+        }
+      }  // .teacher__sentence
+
+      &__photo {
+        margin-right: 50px;
+
+        @include mixin.sp {
+          margin-right: 0;
+        }
+
+        .teacher__img {
+          width: 350px;
+          height: 240px;
+          object-fit: cover;
+          vertical-align: bottom;
+
+          @include mixin.sp {
+            width: 100%;
+            filter: brightness(0.4);
+          }
+        }
+      }  // .teacher__photo
+    }  // .teacher
+
+    // 特徴 3
+    .result {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 60px;
+
+      @include mixin.sp {
+        display: block;
+        position: relative;
+        margin-top: 0;
+      }
+
+      &__sentence {
+
+        @include mixin.sp {
+          width: 90%;
+          margin-left: auto;
+          margin-right: auto;
+          position: absolute;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          z-index: 2;  // 画像の上にテキストを乗せる時に必ず設定
+        }
+
+        .icon {
+          background-color: #F5A623;
+          width: 90px;
+          height: 30px;
+
+          &__text {
+            color: #FFFFFF;
+            font-size: 12px;
+            font-weight: 500;
+            text-align: center;
+            line-height: 30px;
+          }
+        }
+
+        .headline {
+          font-size: 26px;
+          font-weight: bold;
+          line-height: 1.5;
+          @include mixin.afterlineHeight(1.5);
+          margin-top: 35px;
+
+          @include mixin.tab {
+            font-size: 22px;
+            margin-top: 20px;
+          }
+
+          @include mixin.sp {
+            color: #FFFFFF;
+          }
+        }
+
+        .text {
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 1.6875;
+          @include mixin.afterlineHeight(1.6875);
+          margin-top: 34.5px;
+
+          @include mixin.tab {
+            margin-top: 20px;
+          }
+
+          @include mixin.s-tab {
+            font-size: 14px;
+          }
+
+          @include mixin.sp {
+            color: #FFFFFF;
+          }
+        }
+      }  // .result__sentence
+
+      &__photo {
+        margin-left: 50px;
+
+        @include mixin.sp {
+          margin-left: 0;
+        }
+
+        .result__img {
+          width: 350px;
+          height: 240px;
+          object-fit: cover;
+          vertical-align: bottom;
+
+          @include mixin.sp {
+            width: 100%;
+            filter: brightness(0.4);
+          }
+        }
+      }  // .result__photo
+    }  // .result
+
+    // 価格
+    .price {
+      background: url(../img/price.png) no-repeat center center/cover;
+      height: 217px;
+      padding: 61px 0 53px;
+      text-align: center;
+      margin-top: 93px;
+
+      @include mixin.sp {
+        margin-top: 0;
+      }
+
+      &__ttl {
+        color: #FFFFFF;
+        font-size: 26px;
+        font-weight: bold;
+        line-height: 1;
+        @include mixin.afterlineHeight(1);
+
+        @include mixin.sp {
+          font-size: 22px;
+        }
+      }
+
+      &__btn {
+        margin-top: 27px;
+
+        .price__link {
+          display: inline-block;
+          background-color: #F5A62300;
+          padding: 17px 44px;
+          border: 1px solid #FFFFFF;
+          border-radius: 30px;
+          color: #FFFFFF;
+          font-size: 16px;
+          font-weight: bold;
+          // line-height: 14px;  （リンクボタンでのline-height使用禁止）
+          // @include mixin.afterlineHeight(1);
+        }
+      }
+    }
+  }
+}
+
+/* ===============================================
+# 成功事例
+=============================================== */
+
+.success {
+  background-color: #1B224C;
+  padding: 58px 0 60px;
+
+  &__inner {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+
+    .main-ttl {
+      color: #FFFFFF;
+      font-size: 36px;
+      font-weight: bold;
+      line-height: 1;
+      @include mixin.afterlineHeight(1);
+      text-align: center;
+
+      @include mixin.tab {
+        font-size: 30px;
+      }
+
+      @include mixin.sp {
+        font-size: 24px;
+      }
+    }
+
+    .review-area {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 137px;
+
+      figure {
+        margin-bottom: 0;
+      }
+
+      @include mixin.tab {
+        padding: 0 15px;
+        margin-top: 70px;
+      }
+
+      @include mixin.s-tab {
+        display: block;
+      }
+
+      // 成功事例 1（PC用）
+      .pc-review__1 {
+        width: 280px;
+
+        @include mixin.s-tab {
+          display: none;
+        }
+
+        @include mixin.sp {
+          display: none;
+        }
+
+        .example__text {
+          color: #FFFFFF;
+          font-size: 16px;
+          font-weight: bold;
+          line-height: 1.8125;
+          @include mixin.afterlineHeight(1.8125);
+        }
+
+        .model {
+          background-color: #FFFFFF;
+          width: 280px;
+          height: 171px;
+          padding-top: 31px;
+          text-align: center;
+          margin-top: 9px;
+
+          &__photo {
+
+            .model__img {
+              width: 125px;
+              height: 140px;
+              object-fit: cover;
+              vertical-align: bottom;
+            }
+          }
+        }  // .model
+
+        .model-info {
+          display: flex;
+          justify-content: space-between;
+          align-items: baseline;  // wordpress化による修正
+          margin-top: 16px;
+
+          .job {
+            background-color: #F8F8F8;
+            width: 100px;
+            height: 32px;
+
+            &__text {
+              font-size: 16px;
+              font-weight: 500;
+              padding-left: 10px;
+              line-height: 32px;
+            }
+          }
+
+          .m-name {
+            background-color: #F8F8F8;
+            width: 172px;
+            height: 32px;
+
+            &__text {
+              font-size: 16px;
+              font-weight: 500;
+              padding-left: 14px;
+              line-height: 32px;
+            }
+          }
+        }  // .model-info
+
+        .outcome {
+          background-color: #F8F8F8;
+          width: 280px;
+          height: 32px;
+          margin-top: 10px;
+
+          &__text {
+            font-size: 16px;
+            font-weight: 500;
+            padding-left: 14px;
+            line-height: 32px;
+          }
+        }  // .outcome
+      }  // .pc-review__1
+
+      // 成功事例 1（スモールタブレット用）
+      .s-tab-review__1 {
+        display: none;
+
+        @include mixin.s-tab {
+          display: flex;
+          align-items: center;
+          width: 70%;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        @include mixin.sp {
+          display: none;
+        }
+
+        .model {
+          background-color: #FFFFFF;
+          width: 100%;
+          height: 171px;
+          padding-top: 31px;
+          text-align: center;
+          margin-right: 60px;
+
+          &__photo {
+
+            .model__img {
+              width: 125px;
+              height: 140px;
+              object-fit: cover;
+              vertical-align: bottom;
+            }
+          }
+        }  // .model
+
+        .example__text {
+          color: #FFFFFF;
+          font-size: 16px;
+          font-weight: bold;
+          line-height: 1.8125;
+          @include mixin.afterlineHeight(1.8125);
+        }
+
+        .model-info {
+          display: flex;
+          align-items: baseline;  // wordpress化による修正
+          margin-top: 16px;
+
+          .job {
+            background-color: #F8F8F8;
+            width: 100px;
+            height: 32px;
+            margin-right: 8px;
+
+            &__text {
+              font-size: 16px;
+              font-weight: 500;
+              padding-left: 10px;
+              line-height: 32px;
+            }
+          }
+
+          .m-name {
+            background-color: #F8F8F8;
+            width: 172px;
+            height: 32px;
+
+            &__text {
+              font-size: 16px;
+              font-weight: 500;
+              padding-left: 14px;
+              line-height: 32px;
+            }
+          }
+        }  // .model-info
+
+        .outcome {
+          background-color: #F8F8F8;
+          width: 280px;
+          height: 32px;
+          margin-top: 10px;
+
+          &__text {
+            font-size: 16px;
+            font-weight: 500;
+            padding-left: 14px;
+            line-height: 32px;
+          }
+        }  // .outcome
+      }  // .s-tab-review__1
+
+      // 成功事例 1（スマホ用）
+      .sp-review__1 {
+        display: none;
+
+        @include mixin.s-tab {
+          display: none;
+        }
+
+        @include mixin.sp {
+          display: block;
+          width: 70%;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        @include mixin.s-sp {
+          width: 90%;
+        }
+
+        @include mixin.ss-sp {
+          width: 100%;
+        }
+
+        .example__text {
+          color: #FFFFFF;
+          font-size: 16px;
+          font-weight: bold;
+          line-height: 1.8125;
+          @include mixin.afterlineHeight(1.8125);
+        }
+
+        .model {
+          display: flex;
+          justify-content: space-evenly;
+          background-color: #FFFFFF;
+          width: 100%;
+          height: auto;
+          padding-top: 31px;
+          margin-top: 9px;
+
+          &__photo {
+
+            .model__img {
+              width: 175px;
+              height: 196px;
+              object-fit: cover;
+              vertical-align: bottom;
+            }
+          }
+        }  // .model
+
+        .model-info {
+          align-items: baseline;  // wordpress化による修正
+          margin-top: 0;
+
+          @include mixin.ss-sp {
+            margin-right: 30px;
+          }
+
+          .job {
+            background-color: #C8C8C8;
+            width: 90%;
+            height: 32px;
+            text-align: center;
+
+            @include mixin.ss-sp {
+              width: auto;
+              height: auto;
+            }
+
+            &__text {
+              font-size: 14px;
+              font-weight: 500;
+              padding-left: 0;
+              line-height: 32px;
+
+              @include mixin.ss-sp {
+                font-size: 12px;
+              }
+            }
+          }
+
+          .m-name {
+            background-color: #C8C8C8;
+            width: 90%;
+            height: 32px;
+            margin-top: 10px;
+            text-align: center;
+
+            @include mixin.ss-sp {
+              width: auto;
+              height: auto;
+            }
+
+            &__text {
+              font-size: 14px;
+              font-weight: 500;
+              padding-left: 0;
+              line-height: 32px;
+
+              @include mixin.ss-sp {
+                font-size: 12px;
+              }
+            }
+          }
+        }  // .model-info
+
+        .outcome {
+          background-color: #C8C8C8;
+          width: 90%;
+          height: auto;
+          margin-top: 10px;
+          text-align: center;
+
+          @include mixin.ss-sp {
+            width: auto;
+          }
+
+          &__text {
+            font-size: 14px;
+            font-weight: 500;
+            padding-left: 0;
+            line-height: 32px;
+
+            @include mixin.ss-sp {
+              font-size: 12px;
+            }
+          }
+        }  // .outcome
+      }  // .sp-review__1
+
+      // 成功事例 2（PC用）
+      .pc-review__2 {
+        width: 280px;
+
+        @include mixin.s-tab {
+          display: none;
+        }
+
+        @include mixin.sp {
+          display: none;
+        }
+
+        .example__text {
+          color: #FFFFFF;
+          font-size: 16px;
+          font-weight: bold;
+          line-height: 1.8125;
+          @include mixin.afterlineHeight(1.8125);
+        }
+
+        .model {
+          background-color: #FFFFFF;
+          width: 280px;
+          height: 171px;
+          padding-top: 31px;
+          text-align: center;
+          margin-top: 9px;
+
+          &__photo {
+
+            .model__img {
+              width: 125px;
+              height: 140px;
+              object-fit: cover;
+              vertical-align: bottom;
+            }
+          }
+        }  // .model
+
+        .model-info {
+          display: flex;
+          justify-content: space-between;
+          align-items: baseline;  // wordpress化による修正
+          margin-top: 16px;
+
+          .job {
+            background-color: #F8F8F8;
+            width: 100px;
+            height: 32px;
+
+            &__text {
+              font-size: 16px;
+              font-weight: 500;
+              padding-left: 10px;
+              line-height: 32px;
+            }
+          }
+
+          .m-name {
+            background-color: #F8F8F8;
+            width: 172px;
+            height: 32px;
+
+            &__text {
+              font-size: 16px;
+              font-weight: 500;
+              padding-left: 14px;
+              line-height: 32px;
+            }
+          }
+        }  // .model-info
+
+        .outcome {
+          background-color: #F8F8F8;
+          width: 280px;
+          height: 32px;
+          margin-top: 10px;
+
+          &__text {
+            font-size: 16px;
+            font-weight: 500;
+            padding-left: 14px;
+            line-height: 32px;
+          }
+        }  // .outcome
+      }  // .pc-review__2
+
+      // 成功事例 2（スモールタブレット用）
+      .s-tab-review__2 {
+        display: none;
+
+        @include mixin.s-tab {
+          display: flex;
+          align-items: center;
+          width: 70%;
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: 60px;
+        }
+
+        @include mixin.sp {
+          display: none;
+        }
+
+        .model {
+          background-color: #FFFFFF;
+          width: 100%;
+          height: 171px;
+          padding-top: 31px;
+          text-align: center;
+          margin-right: 60px;
+
+          &__photo {
+
+            .model__img {
+              width: 125px;
+              height: 140px;
+              object-fit: cover;
+              vertical-align: bottom;
+            }
+          }
+        }  // .model
+
+        .example__text {
+          color: #FFFFFF;
+          font-size: 16px;
+          font-weight: bold;
+          line-height: 1.8125;
+          @include mixin.afterlineHeight(1.8125);
+        }
+
+        .model-info {
+          display: flex;
+          align-items: baseline;  // wordpress化による修正
+          margin-top: 16px;
+
+          .job {
+            background-color: #F8F8F8;
+            width: 100px;
+            height: 32px;
+            margin-right: 8px;
+
+            &__text {
+              font-size: 16px;
+              font-weight: 500;
+              padding-left: 10px;
+              line-height: 32px;
+            }
+          }
+
+          .m-name {
+            background-color: #F8F8F8;
+            width: 172px;
+            height: 32px;
+
+            &__text {
+              font-size: 16px;
+              font-weight: 500;
+              padding-left: 14px;
+              line-height: 32px;
+            }
+          }
+        }  // .model-info
+
+        .outcome {
+          background-color: #F8F8F8;
+          width: 280px;
+          height: 32px;
+          margin-top: 10px;
+
+          &__text {
+            font-size: 16px;
+            font-weight: 500;
+            padding-left: 14px;
+            line-height: 32px;
+          }
+        }  // .outcome
+      }  // .s-tab-review__2
+
+      // 成功事例 2（スマホ用）
+      .sp-review__2 {
+        display: none;
+
+        @include mixin.s-tab {
+          display: none;
+        }
+
+        @include mixin.sp {
+          display: block;
+          width: 70%;
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: 70px;
+        }
+
+        @include mixin.s-sp {
+          width: 90%;
+        }
+
+        @include mixin.ss-sp {
+          width: 100%;
+        }
+
+        .example__text {
+          color: #FFFFFF;
+          font-size: 16px;
+          font-weight: bold;
+          line-height: 1.8125;
+          @include mixin.afterlineHeight(1.8125);
+        }
+
+        .model {
+          display: flex;
+          justify-content: space-evenly;
+          background-color: #FFFFFF;
+          width: 100%;
+          height: auto;
+          padding-top: 31px;
+          margin-top: 9px;
+
+          &__photo {
+
+            .model__img {
+              width: 175px;
+              height: 196px;
+              object-fit: cover;
+              vertical-align: bottom;
+            }
+          }
+        }  // .model
+
+        .model-info {
+          align-items: baseline;  // wordpress化による修正
+          margin-top: 0;
+
+          @include mixin.ss-sp {
+            margin-right: 30px;
+          }
+
+          .job {
+            background-color: #C8C8C8;
+            width: 90%;
+            height: 32px;
+            text-align: center;
+
+            @include mixin.ss-sp {
+              width: auto;
+              height: auto;
+            }
+
+            &__text {
+              font-size: 14px;
+              font-weight: 500;
+              padding-left: 0;
+              line-height: 32px;
+
+              @include mixin.ss-sp {
+                font-size: 12px;
+              }
+            }
+          }
+
+          .m-name {
+            background-color: #C8C8C8;
+            width: 90%;
+            height: 32px;
+            margin-top: 10px;
+            text-align: center;
+
+            @include mixin.ss-sp {
+              width: auto;
+              height: auto;
+            }
+
+            &__text {
+              font-size: 14px;
+              font-weight: 500;
+              padding-left: 0;
+              line-height: 32px;
+
+              @include mixin.ss-sp {
+                font-size: 12px;
+              }
+            }
+          }
+        }  // .model-info
+
+        .outcome {
+          background-color: #C8C8C8;
+          width: 90%;
+          height: auto;
+          margin-top: 10px;
+          text-align: center;
+
+          @include mixin.ss-sp {
+            width: auto;
+          }
+
+          &__text {
+            font-size: 14px;
+            font-weight: 500;
+            padding-left: 0;
+            line-height: 32px;
+
+            @include mixin.ss-sp {
+              font-size: 12px;
+            }
+          }
+        }  // .outcome
+      }  // .sp-review__2
+
+
+      // 成功事例 3（PC用）
+      .pc-review__3 {
+        width: 280px;
+
+        @include mixin.s-tab {
+          display: none;
+        }
+
+        @include mixin.sp {
+          display: none;
+        }
+
+        .example__text {
+          color: #FFFFFF;
+          font-size: 16px;
+          font-weight: bold;
+          line-height: 1.8125;
+          @include mixin.afterlineHeight(1.8125);
+        }
+
+        .model {
+          background-color: #FFFFFF;
+          width: 280px;
+          height: 171px;
+          padding-top: 31px;
+          text-align: center;
+          margin-top: 9px;
+
+          &__photo {
+
+            .model__img {
+              width: 125px;
+              height: 140px;
+              object-fit: cover;
+              vertical-align: bottom;
+            }
+          }
+        }
+
+        .model-info {
+          display: flex;
+          justify-content: space-between;
+          align-items: baseline;  // wordpress化による修正
+          margin-top: 16px;
+
+          .job {
+            background-color: #F8F8F8;
+            width: 100px;
+            height: 32px;
+
+            &__text {
+              font-size: 16px;
+              font-weight: 500;
+              padding-left: 10px;
+              line-height: 32px;
+            }
+          }
+
+          .m-name {
+            background-color: #F8F8F8;
+            width: 172px;
+            height: 32px;
+
+            &__text {
+              font-size: 16px;
+              font-weight: 500;
+              padding-left: 14px;
+              line-height: 32px;
+            }
+          }
+        }
+
+        .outcome {
+          background-color: #F8F8F8;
+          width: 280px;
+          height: 32px;
+          margin-top: 10px;
+
+          &__text {
+            font-size: 16px;
+            font-weight: 500;
+            padding-left: 14px;
+            line-height: 32px;
+          }
+        }
+      }  // .pc-review__3
+
+      // 成功事例 3（スモールタブレット用）
+      .s-tab-review__3 {
+        display: none;
+
+        @include mixin.s-tab {
+          display: flex;
+          align-items: center;
+          width: 70%;
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: 60px;
+        }
+
+        @include mixin.sp {
+          display: none;
+        }
+
+        .model {
+          background-color: #FFFFFF;
+          width: 100%;
+          height: 171px;
+          padding-top: 31px;
+          text-align: center;
+          margin-right: 60px;
+
+          &__photo {
+
+            .model__img {
+              width: 125px;
+              height: 140px;
+              object-fit: cover;
+              vertical-align: bottom;
+            }
+          }
+        }  // .model
+
+        .example__text {
+          color: #FFFFFF;
+          font-size: 16px;
+          font-weight: bold;
+          line-height: 1.8125;
+          @include mixin.afterlineHeight(1.8125);
+        }
+
+        .model-info {
+          display: flex;
+          align-items: baseline;  // wordpress化による修正
+          margin-top: 16px;
+
+          .job {
+            background-color: #F8F8F8;
+            width: 100px;
+            height: 32px;
+            margin-right: 8px;
+
+            &__text {
+              font-size: 16px;
+              font-weight: 500;
+              padding-left: 10px;
+              line-height: 32px;
+            }
+          }
+
+          .m-name {
+            background-color: #F8F8F8;
+            width: 172px;
+            height: 32px;
+
+            &__text {
+              font-size: 16px;
+              font-weight: 500;
+              padding-left: 14px;
+              line-height: 32px;
+            }
+          }
+        }  // .model-info
+
+        .outcome {
+          background-color: #F8F8F8;
+          width: 280px;
+          height: 32px;
+          margin-top: 10px;
+
+          &__text {
+            font-size: 16px;
+            font-weight: 500;
+            padding-left: 14px;
+            line-height: 32px;
+          }
+        }  // .outcome
+      }  // .s-tab-review__3
+
+      // 成功事例 3（スマホ用）
+      .sp-review__3 {
+        display: none;
+
+        @include mixin.s-tab {
+          display: none;
+        }
+
+        @include mixin.sp {
+          display: block;
+          width: 70%;
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: 70px;
+        }
+
+        @include mixin.s-sp {
+          width: 90%;
+        }
+
+        @include mixin.ss-sp {
+          width: 100%;
+        }
+
+        .example__text {
+          color: #FFFFFF;
+          font-size: 16px;
+          font-weight: bold;
+          line-height: 1.8125;
+          @include mixin.afterlineHeight(1.8125);
+        }
+
+        .model {
+          display: flex;
+          justify-content: space-evenly;
+          background-color: #FFFFFF;
+          width: 100%;
+          height: auto;
+          padding-top: 31px;
+          margin-top: 9px;
+
+          &__photo {
+
+            .model__img {
+              width: 175px;
+              height: 196px;
+              object-fit: cover;
+              vertical-align: bottom;
+            }
+          }
+        }  // .model
+
+        .model-info {
+          align-items: baseline;  // wordpress化による修正
+          margin-top: 0;
+
+          @include mixin.ss-sp {
+            margin-right: 30px;
+          }
+
+          .job {
+            background-color: #C8C8C8;
+            width: 90%;
+            height: 32px;
+            text-align: center;
+
+            @include mixin.ss-sp {
+              width: auto;
+              height: auto;
+            }
+
+            &__text {
+              font-size: 14px;
+              font-weight: 500;
+              padding-left: 0;
+              line-height: 32px;
+
+              @include mixin.ss-sp {
+                font-size: 12px;
+              }
+            }
+          }
+
+          .m-name {
+            background-color: #C8C8C8;
+            width: 90%;
+            height: 32px;
+            margin-top: 10px;
+            text-align: center;
+
+            @include mixin.ss-sp {
+              width: auto;
+              height: auto;
+            }
+
+            &__text {
+              font-size: 14px;
+              font-weight: 500;
+              padding-left: 0;
+              line-height: 32px;
+
+              @include mixin.ss-sp {
+                font-size: 12px;
+              }
+            }
+          }
+        }  // .model-info
+
+        .outcome {
+          background-color: #C8C8C8;
+          width: 90%;
+          height: auto;
+          margin-top: 10px;
+          text-align: center;
+
+          @include mixin.ss-sp {
+            width: auto;
+          }
+
+          &__text {
+            font-size: 14px;
+            font-weight: 500;
+            padding-left: 0;
+            line-height: 32px;
+
+            @include mixin.ss-sp {
+              font-size: 12px;
+            }
+          }
+        }  // .outcome
+      }  // .sp-review__3
+    }  // .review-area
+  }  // .success__inner
+}  // .success
+
+/* ===============================================
+# ご利用の流れ
+=============================================== */
+
+.usage {
+  background-color: #FFFFFF;
+  padding: 58px 0 119px;
+
+  &__inner {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include mixin.tab {
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .u-main-ttl {
+      font-size: 36px;
+      font-weight: bold;
+      line-height: 1;
+      @include mixin.afterlineHeight(1);
+      text-align: center;
+
+      @include mixin.tab {
+        font-size: 30px;
+      }
+
+      @include mixin.sp {
+        font-size: 24px;
+      }
+    }
+
+    // フローチャート
+    .flow {
+      margin-top: 53px;
+
+      // フローチャート 1
+      &__1 {
+        display: flex;
+
+        .num {
+          background-color: #F5A623;
+          width: 64px;
+          height: 64px;
+
+          @include mixin.sp {
+            height: 134px;
+          }
+
+          &__text {
+            color: #FFFFFF;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 64px;
+
+            @include mixin.sp {
+              line-height: 134px;
+            }
+          }
+        }
+
+        .contents {
+          display: flex;
+          background-color: #F8F8F8;
+          padding: 17px 0;  // .indexのborder-rightの長さぶん
+          width: 100%;  // wordpress化による修正
+
+          @include mixin.sp {
+            display: block;
+          }
+
+          .index {
+            width: 214px;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 30px;  // border-rightの長さぶん
+            padding-left: 21px;
+            border-right: 1.5px solid #C3C3C3;
+
+            @include mixin.s-tab {
+              width: 170px;
+              font-size: 14px;
+            }
+
+            @include mixin.sp {
+              border: none;
+            }
+          }
+
+          .text {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 30px;  // .indexのborder-rightの長さぶん
+            padding-left: 53px;
+
+            @include mixin.s-tab {
+              font-size: 14px;
+              padding-left: 30px;
+            }
+
+            @include mixin.sp {
+              line-height: 1.7;
+              padding-left: 21px;
+              margin-top: 10px;
+            }
+          }
+        }
+      }
+
+      // フローチャート 2
+      &__2 {
+        display: flex;
+        margin-top: 8px;
+
+        .num {
+          background-color: #F5A623;
+          width: 64px;
+          height: 64px;
+
+          @include mixin.sp {
+            height: 134px;
+          }
+
+          &__text {
+            color: #FFFFFF;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 64px;
+
+            @include mixin.sp {
+              line-height: 134px;
+            }
+          }
+        }
+
+        .contents {
+          display: flex;
+          background-color: #F8F8F8;
+          padding: 17px 0;  // .indexのborder-rightの長さぶん
+          width: 100%;  // wordpress化による修正
+
+          @include mixin.sp {
+            display: block;
+          }
+
+          .index {
+            width: 214px;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 30px;  // border-rightの長さぶん
+            padding-left: 21px;
+            border-right: 1.5px solid #C3C3C3;
+
+            @include mixin.s-tab {
+              width: 170px;
+              font-size: 14px;
+            }
+
+            @include mixin.sp {
+              border: none;
+            }
+          }
+
+          .text {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 30px;  // .indexのborder-rightの長さぶん
+            padding-left: 53px;
+
+            @include mixin.s-tab {
+              font-size: 14px;
+              padding-left: 30px;
+            }
+
+            @include mixin.sp {
+              line-height: 1.7;
+              padding-left: 21px;
+              margin-top: 10px;
+            }
+          }
+        }
+      }
+
+      // フローチャート 3
+      &__3 {
+        display: flex;
+        margin-top: 8px;
+
+        .num {
+          background-color: #F5A623;
+          width: 64px;
+          height: 64px;
+
+          @include mixin.sp {
+            height: 134px;
+          }
+
+          &__text {
+            color: #FFFFFF;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 64px;
+
+            @include mixin.sp {
+              line-height: 134px;
+            }
+          }
+        }
+
+        .contents {
+          display: flex;
+          background-color: #F8F8F8;
+          padding: 17px 0;  // .indexのborder-rightの長さぶん
+          width: 100%;  // wordpress化による修正
+
+          @include mixin.sp {
+            display: block;
+          }
+
+          .index {
+            width: 214px;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 30px;  // border-rightの長さぶん
+            padding-left: 21px;
+            border-right: 1.5px solid #C3C3C3;
+
+            @include mixin.s-tab {
+              width: 170px;
+              font-size: 14px;
+              // padding-right: 21px;
+            }
+
+            @include mixin.sp {
+              border: none;
+            }
+          }
+
+          .text {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 30px;  // .indexのborder-rightの長さぶん
+            padding-left: 53px;
+
+            @include mixin.s-tab {
+              font-size: 14px;
+              padding-left: 30px;
+            }
+
+            @include mixin.sp {
+              line-height: 1.7;
+              padding-left: 21px;
+              margin-top: 10px;
+            }
+          }
+        }
+      }
+
+      // フローチャート 4
+      &__4 {
+        display: flex;
+        margin-top: 8px;
+
+        .num {
+          background-color: #F5A623;
+          width: 64px;
+          height: 64px;
+
+          @include mixin.sp {
+            height: 134px;
+          }
+
+          &__text {
+            color: #FFFFFF;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 64px;
+
+            @include mixin.sp {
+              line-height: 134px;
+            }
+          }
+        }
+
+        .contents {
+          display: flex;
+          background-color: #F8F8F8;
+          padding: 17px 0;  // .indexのborder-rightの長さぶん
+          width: 100%;  // wordpress化による修正
+
+          @include mixin.sp {
+            display: block;
+          }
+
+          .index {
+            width: 214px;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 30px;  // border-rightの長さぶん
+            padding-left: 21px;
+            border-right: 1.5px solid #C3C3C3;
+
+            @include mixin.s-tab {
+              width: 170px;
+              font-size: 14px;
+            }
+
+            @include mixin.sp {
+              border: none;
+            }
+          }
+
+          .text {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 30px;  // .indexのborder-rightの長さぶん
+            padding-left: 53px;
+
+            @include mixin.s-tab {
+              font-size: 14px;
+              padding-left: 30px;
+            }
+
+            @include mixin.sp {
+              line-height: 1.7;
+              padding-left: 21px;
+              margin-top: 10px;
+            }
+          }
+        }
+      }
+    }
+
+    // よくある質問
+    .faq {
+
+      .f-main-ttl {
+        font-size: 36px;
+        font-weight: bold;
+        line-height: 1;
+        @include mixin.afterlineHeight(1);
+        text-align: center;
+        margin-top: 75px;
+
+        @include mixin.tab {
+          font-size: 30px;
+        }
+
+        @include mixin.sp {
+          font-size: 24px;
+        }
+      }
+
+      // アコーディオン
+      .c-accordion {
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 32px;
+        background-color: #FFFFFF;
+        border-bottom: 1px solid #1B224C;  // アコーディオン最下部のborder
+
+        // @include mixin.tab {
+        //   width: 80%;
+        //   margin-left: auto;
+        //   margin-right: auto;
+        // }
+
+        // @include mixin.sp {
+        //   width: 90%;
+        // }
+
+        .c-accordion__item {
+
+          // Questionエリア
+          .c-accordion__title {
+            // アコーディオン開閉ボタンの位置決め用
+            position: relative;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 65px;  // テキスト高さ中央揃え
+            border-top: 1px solid #1B224C;
+
+            @include mixin.s-tab {
+              font-size: 14px;
+            }
+
+            @include mixin.sp {
+              height: 65px;
+              line-height: 1.6;
+              padding-top: 10px;
+              padding-right: 70px;
+            }
+
+            @include mixin.ss-sp {
+              height: auto;
+              padding-bottom: 10px;
+            }
+
+            // .sp-br {
+            //   display: none;
+
+            //   @include mixin.sp {
+            //     display: block;
+            //   }
+            // }
+          }
+
+          // アコーディオン開閉ボタンの縦線
+          .c-accordion__title::before{
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 25px;
+            /*縦線の長さ*/
+            width: 25px;
+            height: 3px;
+            transform: rotate(90deg);
+            background: #1B224C;
+            transition: all .3s ease-in-out;
+          }
+
+          // アコーディオン開閉ボタンの横線
+          .c-accordion__title::after{
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 25px;
+            /*横線の長さ*/
+            width: 25px;
+            height: 3px;
+            background: #1B224C;
+            transition: all .2s ease-in-out;
+          }
+
+          // オープンした時（今回は縦線を消去）
+          .c-accordion__title.is-open::before{
+            // transform: rotate(135deg);
+            display: none;
+          }
+
+          // オープンした時（今回は横線はそのまま）
+          // .c-accordion__title.is-open::after{
+          //   transform: rotate(45deg);
+          // }
+
+          // Answerエリア
+          .c-accordion__body {
+            display: none;
+            background-color: #F8F8F8;
+            font-size: 16px;
+            font-weight: 500;
+            text-align: left;
+            line-height: 65px;  // テキスト高さ中央揃え
+            padding-left: 25px;
+            margin-bottom: 12px;
+
+            @include mixin.s-tab {
+              font-size: 14px;
+            }
+
+            @include mixin.sp {
+              height: 65px;
+              line-height: 1.6;
+              padding-top: 10px;
+              padding-left: 10px;
+            }
+
+            @include mixin.ss-sp {
+              height: auto;
+              padding-bottom: 10px;
+            }
+          }
+        }  // .c-accordion__item
+      }  // .c-accordion
+    }  // .faq
+
+    // ブログ・お知らせ共通
+    .info {
+      display: flex;
+      margin-top: 90px;
+
+      @include mixin.sp {
+        display: block;
+      }
+
+      // ブログ
+      .blog {
+        max-width: 410px;
+
+        @include mixin.sp {
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .b-main-ttl {
+          font-size: 32px;
+          font-weight: bold;
+          line-height: 1;
+          @include mixin.afterlineHeight(1);
+
+          @include mixin.tab {
+            font-size: 30px;
+          }
+
+          @include mixin.sp {
+            font-size: 24px;
+            text-align: center;
+          }
+        }
+
+        // 各ブログ
+        &__loop {
+          margin-top: 30px;
+
+          li {
+            display: flex;
+            position: relative;
+            margin-bottom: 31px;
+
+            .blog-category {
+              width: auto;
+              height: 22px;
+              padding-left: 9px;
+              padding-right: 9px;
+              background-color: #1B224C;
+              color: #FFFFFF;
+              font-size: 12px;
+              font-weight: 500;
+              position: absolute;
+              top: 0;
+              left: 0;
+              text-align: center;
+              line-height: 22px;
+              border: 1px solid #707070;
+            }
+
+            .blog__photo {
+              margin: 0;
+
+              .blog__img {
+                width: 150px;
+                height: 110px;
+                object-fit: cover;
+                vertical-align: bottom;
+              }
+            }
+
+            .sentence {
+              display: flex;
+              flex-flow: column;  // 縦並びの両端揃え
+              justify-content:space-between;
+              margin-left: 20px;
+
+              &__link {
+                display: block;
+                color: #1B224C;
+                font-size: 16px;
+                font-weight: bold;
+                line-height: 1.6875;
+                @include mixin.afterlineHeight(1.6875);
+                text-decoration: underline;
+                text-decoration-color: #1B224C;
+                text-decoration-thickness: 1px;
+                text-decoration-skip-ink: none;
+              }
+
+              &__date {
+                font-size: 12px;
+                font-weight: 500;
+                line-height: 1;
+                @include mixin.afterlineHeight(1);
+              }
+            }
+          }
+        }  // .blog__loop
+
+        .not-found {
+          font-size: 16px;
+          margin-top: 30px;
+        }
+      }  // .blog
+
+      .news {
+        margin-left: 67px;
+
+        @include mixin.sp {
+          max-width: 410px;
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: 70px;
+        }
+
+        .n-main-ttl {
+          font-size: 32px;
+          font-weight: bold;
+          line-height: 1;
+          @include mixin.afterlineHeight(1);
+
+          @include mixin.tab {
+            font-size: 30px;
+          }
+
+          @include mixin.sp {
+            font-size: 24px;
+            text-align: center;
+          }
+        }
+
+        // 各お知らせ
+        &__loop {
+          margin-top: 30px;
+
+          .sentence {
+            height: 87px;
+            margin-bottom: 17px;
+
+            @include mixin.sp {
+              height: 70px;
+            }
+
+            &__date {
+              font-size: 12px;
+              font-weight: 500;
+              line-height: 1;
+              @include mixin.afterlineHeight(1);
+            }
+
+            &__link {
+              display: block;
+              color: #1B224C;
+              font-size: 16px;
+              font-weight: 500;
+              line-height: 1.6875;
+              @include mixin.afterlineHeight(1.6875);
+              text-decoration: underline;
+              text-decoration-color: #1B224C;
+              text-decoration-thickness: 1px;
+              text-decoration-skip-ink: none;
+              margin-top: 16px;
+            }
+          }
+        }  // .news__loop
+      }  // .news
+    }  // .info
+  }  // .usage__inner
+}  // .usage

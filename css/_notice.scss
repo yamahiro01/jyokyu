@@ -1,0 +1,216 @@
+@use "mixin";
+@use "header";
+@use "contact";
+@use "footer";
+
+/* ===============================================
+# お知らせ詳細パンくずリスト
+=============================================== */
+
+.notice-breadcrumb-area {
+  background-color: #F8F8F8;
+  height: fit-content;  // 固定headerぶんの位置調整（+80px）
+  padding-top: 80px;  // 固定headerぶんの位置調整（+80px）
+
+  .breadcrumbs {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include mixin.tab {
+      width: 90%;
+    }
+
+    span {
+      color: #1B224C;  // パンくずのリンクはcolor指定必要
+      font-size: 12px;
+      line-height: 50px;
+    }
+
+    .home {
+
+      &:hover {
+        text-decoration: underline;
+        text-decoration-color: #1B224C;
+      }
+
+      span {
+
+        &:hover {
+          font-weight: 500;
+        }
+      }
+    }
+
+    .current-item {
+      text-decoration: none;
+      word-break: break-all;
+    }
+  }
+}  // .breadcrumb-area
+
+/* ===============================================
+# お知らせ詳細
+=============================================== */
+
+.notice {
+  background-color: #FFFFFF;
+  padding: 60px 0 55px;
+
+  &__inner {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include mixin.tab {
+      width: 80%;
+    }
+
+    .main-ttl {
+      font-size: 28px;
+      font-weight: bold;
+      line-height: 1.7142;
+      @include mixin.afterlineHeight(1.7142);
+
+      @include mixin.sp {
+        font-size: 24px;
+      }
+    }
+
+    .date {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1;
+      @include mixin.afterlineHeight(1);
+      text-align: right;
+      margin-top: 36px;
+      margin-bottom: 60px;
+    }
+
+    // WordPress入力エリア
+
+    // 見出しh2
+    h2 {
+      font-size: 26px;
+      font-weight: bold;
+      line-height: 1.5;
+      @include mixin.afterlineHeight(1.5);
+
+      @include mixin.sp {
+        font-size: 22px;
+      }
+    }
+
+    // 段落
+    p {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.5;
+      @include mixin.afterlineHeight(1.5);
+    }
+
+    // 見出しh3
+    h3 {
+      font-size: 22px;
+      font-weight: bold;
+      line-height: 1.5;
+      @include mixin.afterlineHeight(1.5);
+      border-left: 4px solid #1B224C;
+      padding-left: 10px;
+
+      @include mixin.sp {
+        font-size: 20px;
+      }
+    }
+
+    // 引用
+    .wp-block-quote {
+      position: relative;
+      background-color: #F8F8F8;
+      padding: 32px 26px 32px 80px;
+      margin: 0;  // リセットmargin
+
+      p {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.5;
+        @include mixin.afterlineHeight(1.5);
+        margin: 0;
+      }
+
+      .fa-quote-left {
+        position: absolute;
+        top: 25px;
+        left: 20px;
+        color: #B4B4B4;
+      }
+    }
+
+    // 画像（フォーマット用）
+    figure {
+      margin: 0;
+
+      img {
+        object-fit: cover;
+        vertical-align: bottom;
+      }
+    }
+
+    // 画像
+    .wp-block-image {
+      margin: 0;
+
+      img {
+        width: 400px;
+        height: 250px;
+        object-fit: cover;
+        vertical-align: bottom;
+
+        @include mixin.sp {
+          max-width: 400px;
+          width: 100%;
+          max-height: 250px;
+          height: auto;
+        }
+      }
+    }
+
+    // リスト
+    ul {
+      margin-left: 30px;
+      line-height: 1.5;  // リストのline-heightはulに指定
+      @include mixin.afterlineHeight(1.5);
+
+      li {
+        font-size: 16px;
+        font-weight: 500;
+        position: relative
+      }
+
+      li::before {
+        content: "";
+        width: 11px;
+        height: 11px;
+        background-color: #F5A623;
+        border-radius: 50%;
+        position: absolute;
+        top: 6px;
+        left: -30px;
+      }
+    }
+
+    // リンク付き段落
+    p {
+
+      a {
+        color: #F5A623;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.5;
+        @include mixin.afterlineHeight(1.5);
+        text-decoration: underline;
+        text-decoration-color: #F5A623;
+      }
+    }
+  } // .notice__inner
+}  // .notice

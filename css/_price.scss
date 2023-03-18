@@ -1,0 +1,799 @@
+@use "mixin";
+@use "header";
+@use "contact";
+@use "footer";
+
+/* ===============================================
+# 料金メインビジュアル
+=============================================== */
+
+.price-mv {
+  background-size: cover;
+  height: 301px;  // 固定headerぶんの位置調整（+80px）
+  padding-top: 175px;  // 固定headerぶんの位置調整（+80px）
+  text-align: center;
+
+  .main-ttl {
+    color: #FFFFFF;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 1;
+    @include mixin.afterlineHeight(1);
+
+    @include mixin.s-tab {
+      font-size: 28px;
+    }
+
+    @include mixin.sp {
+      font-size: 24px;
+    }
+  }
+}
+
+/* ===============================================
+# コース・料金パンくずリスト
+=============================================== */
+
+.price-breadcrumb-area {
+  background-color: #F8F8F8;
+  height: 50px;
+
+  .breadcrumbs {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include mixin.tab {
+      width: 90%;
+    }
+
+    span {
+      color: #1B224C;  // パンくずのリンクはcolor指定必要
+      font-size: 12px;
+      line-height: 50px;
+    }
+
+    // hoverアクション（ホーム）
+    .home {
+
+      span {
+
+        &:hover {
+          font-weight: 500;
+          text-decoration: underline;
+          text-decoration-color: #1B224C;
+        }
+      }
+    }
+
+    .current-item {
+      text-decoration: none;
+    }
+  }
+}  // .price-breadcrumb-area
+
+
+/* ===============================================
+# 料金表エリア
+=============================================== */
+
+.price-main {
+
+  &__inner {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include mixin.tab {
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    // 料金体系
+    .pricing-plan {
+      background-color: #FFFFFF;
+      padding-top: 58px;
+
+      .main-ttl {
+        font-size: 32px;
+        font-weight: bold;
+        line-height: 1;
+        @include mixin.afterlineHeight(1);
+        text-align: center;
+
+        @include mixin.s-tab {
+          font-size: 28px;
+        }
+
+        @include mixin.sp {
+          font-size: 24px;
+        }
+      }
+
+      .plan-area {
+        display: flex;
+        justify-content: center;
+        margin-top: 60px;
+        margin-left: -10px;
+
+        @include mixin.sp {
+          display: block;
+        }
+
+        .admission {
+          background-color: #1B224C;
+          width: 280px;
+          height: 90px;
+          position: relative;
+
+          @include mixin.sp {
+            margin-left: auto;
+            margin-right: auto;
+          }
+
+          &__price {
+            color: #FFFFFF;
+            font-size: 22px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 90px;
+          }
+
+          // +記号の縦線
+          &::before{
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: -61px;
+            /*縦線の長さ*/
+            width: 26px;
+            height: 2px;
+            transform: rotate(90deg);
+            background: #1B224C;
+
+            @include mixin.sp {
+              top: 125px;
+              right: 125px;
+            }
+          }
+
+          // +記号の横線
+          &::after{
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: -61px;
+            /*横線の長さ*/
+            width: 26px;
+            height: 2px;
+            background: #1B224C;
+
+            @include mixin.sp {
+              top: 125px;
+              right: 125px;
+            }
+          }
+        }  // .admission
+
+        .monthly {
+          background-color: #1B224C;
+          width: 280px;
+          height: 90px;
+          margin-left: 98px;
+
+          @include mixin.sp {
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 70px;
+          }
+
+          &__price {
+            color: #FFFFFF;
+            font-size: 22px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 90px;
+          }
+        }  // .monthly
+      }  // .plan-area
+
+      .annotation {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.6875;
+        @include mixin.afterlineHeight(1.6875);
+        margin-top: 45px;
+
+        @include mixin.s-tab {
+          width: 90%;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        @include mixin.sp {
+          font-size: 14px;
+        }
+      }
+    }  // .pricing-plan
+
+    // 料金表
+    .pricing-list {
+      margin-top: 90px;
+      padding-bottom: 62px;
+
+      .main-ttl {
+        font-size: 32px;
+        font-weight: bold;
+        line-height: 1;
+        @include mixin.afterlineHeight(1);
+        text-align: center;
+
+        @include mixin.s-tab {
+          font-size: 28px;
+        }
+
+        @include mixin.sp {
+          font-size: 24px;
+        }
+      }
+
+      /* テーブル関連のスタイル */
+      .js-scrollable{
+        white-space: nowrap;  /* 文字の折り返しはなくす */
+      }
+
+      .list-area {
+        display: flex;
+        justify-content: space-between;
+        // margin-top: 106px;  スクロールヒント使用の場合、全体にmargin-top使用禁止
+
+        @include mixin.tab {
+          justify-content: start;
+        }
+
+        // 基礎プラン
+        &__1 {
+          width: 220px;
+          height: 474px;
+          border: 0.5px solid #1B224C;
+          margin-top: 106px;  // スクロールヒント使用の場合、個々にmargin-top指定
+
+          @include mixin.tab {
+            margin-right: 7px;
+          }
+
+          .list-name {
+            background-color: #1B224C;
+            height: 60px;
+
+            .headline {
+              color: #FFFFFF;
+              font-size: 16px;
+              font-weight: bold;
+              line-height: 60px;
+              text-align: center;
+            }
+          }
+
+          .list-contents {
+            padding-top: 30px;
+            text-align: center;
+
+            @include mixin.tab {
+              padding-right: 23.5px;
+              padding-left: 23.5px;
+            }
+
+            .fee {
+
+              &__value {
+                font-size: 25px;
+                font-weight: bold;
+                line-height: 1;
+                @include mixin.afterlineHeight(1);
+              }
+
+              &__monthly {
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 1;
+                @include mixin.afterlineHeight(1);
+                margin-top: 14px;
+              }
+            }
+
+            .detail {
+              margin-top: 48px;
+
+              &__1 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .check {
+                  content: '';
+                  width: 12px;
+                  height: 8px;
+                  border-left: 3px solid #1B224C;
+                  border-bottom: 3px solid #1B224C;
+                  transform: rotate(-45deg);
+                  margin-bottom: 3px;
+                  margin-right: 11.5px;
+                }
+
+                .text {
+                  font-size: 16px;
+                  font-weight: 500;
+                  line-height: 1;
+                  @include mixin.afterlineHeight(1);
+                }
+              }
+
+              &__2 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 23px;
+
+                .check {
+                  content: '';
+                  width: 12px;
+                  height: 8px;
+                  border-left: 3px solid #1B224C;
+                  border-bottom: 3px solid #1B224C;
+                  transform: rotate(-45deg);
+                  margin-bottom: 3px;
+                  margin-right: 11.5px;
+                }
+
+                .text {
+                  font-size: 16px;
+                  font-weight: 500;
+                  line-height: 1;
+                  @include mixin.afterlineHeight(1);
+                }
+              }
+
+              &__3 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 23px;
+
+                .check {
+                  content: '';
+                  width: 12px;
+                  height: 8px;
+                  border-left: 3px solid #1B224C;
+                  border-bottom: 3px solid #1B224C;
+                  transform: rotate(-45deg);
+                  margin-bottom: 3px;
+                  margin-right: 11.5px;
+                }
+
+                .text {
+                  font-size: 16px;
+                  font-weight: 500;
+                  line-height: 1;
+                  @include mixin.afterlineHeight(1);
+                }
+              }
+            }  // .detail
+          }  // .list-contents
+        }  // .list-area__1
+
+        // 演習プラン
+        &__2 {
+          width: 220px;
+          height: 474px;
+          border: 0.5px solid #1B224C;
+          margin-top: 106px;  // スクロールヒント使用の場合、個々にmargin-top指定
+
+          @include mixin.tab {
+            margin-right: 7px;
+          }
+
+          .list-name {
+            background-color: #1B224C;
+            height: 60px;
+
+            .headline {
+              color: #FFFFFF;
+              font-size: 16px;
+              font-weight: bold;
+              line-height: 60px;
+              text-align: center;
+            }
+          }
+
+          .list-contents {
+            padding-top: 30px;
+            text-align: center;
+
+            @include mixin.tab {
+              padding-right: 23.5px;
+              padding-left: 23.5px;
+            }
+
+            .fee {
+
+              &__value {
+                font-size: 25px;
+                font-weight: bold;
+                line-height: 1;
+                @include mixin.afterlineHeight(1);
+              }
+
+              &__monthly {
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 1;
+                @include mixin.afterlineHeight(1);
+                margin-top: 14px;
+              }
+            }
+
+            .detail {
+              margin-top: 48px;
+
+              &__1 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .check {
+                  content: '';
+                  width: 12px;
+                  height: 8px;
+                  border-left: 3px solid #1B224C;
+                  border-bottom: 3px solid #1B224C;
+                  transform: rotate(-45deg);
+                  margin-bottom: 3px;
+                  margin-right: 11.5px;
+                }
+
+                .text {
+                  font-size: 16px;
+                  font-weight: 500;
+                  line-height: 1;
+                  @include mixin.afterlineHeight(1);
+                }
+              }
+
+              &__2 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 23px;
+
+                .check {
+                  content: '';
+                  width: 12px;
+                  height: 8px;
+                  border-left: 3px solid #1B224C;
+                  border-bottom: 3px solid #1B224C;
+                  transform: rotate(-45deg);
+                  margin-bottom: 3px;
+                  margin-right: 11.5px;
+                }
+
+                .text {
+                  font-size: 16px;
+                  font-weight: 500;
+                  line-height: 1;
+                  @include mixin.afterlineHeight(1);
+                }
+              }
+
+              &__3 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 23px;
+
+                .check {
+                  content: '';
+                  width: 12px;
+                  height: 8px;
+                  border-left: 3px solid #1B224C;
+                  border-bottom: 3px solid #1B224C;
+                  transform: rotate(-45deg);
+                  margin-bottom: 3px;
+                  margin-right: 11.5px;
+                }
+
+                .text {
+                  font-size: 16px;
+                  font-weight: 500;
+                  line-height: 1;
+                  @include mixin.afterlineHeight(1);
+                }
+              }
+
+              &__4 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 23px;
+
+                .check {
+                  content: '';
+                  width: 12px;
+                  height: 8px;
+                  border-left: 3px solid #1B224C;
+                  border-bottom: 3px solid #1B224C;
+                  transform: rotate(-45deg);
+                  margin-bottom: 30px;
+                  margin-right: 11.5px;
+                }
+
+                .text {
+                  font-size: 16px;
+                  font-weight: 500;
+                  line-height: 1.6875;
+                  @include mixin.afterlineHeight(1.6875);
+                }
+              }
+            }  // .detail
+          }  // .list-contents
+        }  // .list-area__2
+
+        // 志望校対策プラン
+        &__3 {
+          width: 220px;
+          height: 510px;
+          margin-top: -36px;
+          border: 0.5px solid #1B224C;
+          margin-top: 70px;  // スクロールヒント使用の場合、個々にmargin-top指定
+
+          @include mixin.tab {
+            margin-right: 7px;
+          }
+
+          .list-name {
+            background-color: #F5A623;
+            height: 96px;
+
+            .recommendation {
+              color: #FFFFFF;
+              font-size: 16px;
+              font-weight: bold;
+              line-height: 1;
+              @include mixin.afterlineHeight(1);
+              text-align: center;
+              padding-top: 20px;
+            }
+
+            .headline {
+              color: #FFFFFF;
+              font-size: 16px;
+              font-weight: bold;
+              line-height: 1;
+              @include mixin.afterlineHeight(1);
+              text-align: center;
+              margin-top: 19px;
+            }
+          }
+
+          .list-contents {
+            padding-top: 30px;
+            text-align: center;
+
+            @include mixin.tab {
+              padding-right: 23.5px;
+              padding-left: 23.5px;
+            }
+
+            .fee {
+
+              &__value {
+                color: #F5A623;
+                font-size: 25px;
+                font-weight: bold;
+                line-height: 1;
+                @include mixin.afterlineHeight(1);
+              }
+
+              &__monthly {
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 1;
+                @include mixin.afterlineHeight(1);
+                margin-top: 14px;
+              }
+            }
+
+            .detail {
+              margin-top: 48px;
+
+              &__1 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .check {
+                  content: '';
+                  width: 12px;
+                  height: 8px;
+                  border-left: 3px solid #1B224C;
+                  border-bottom: 3px solid #1B224C;
+                  transform: rotate(-45deg);
+                  margin-bottom: 3px;
+                  margin-right: 11.5px;
+                }
+
+                .text {
+                  font-size: 16px;
+                  font-weight: 500;
+                  line-height: 1;
+                  @include mixin.afterlineHeight(1);
+                }
+              }
+
+              &__2 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 23px;
+
+                .check {
+                  content: '';
+                  width: 12px;
+                  height: 8px;
+                  border-left: 3px solid #1B224C;
+                  border-bottom: 3px solid #1B224C;
+                  transform: rotate(-45deg);
+                  margin-bottom: 3px;
+                  margin-right: 11.5px;
+                }
+
+                .text {
+                  font-size: 16px;
+                  font-weight: 500;
+                  line-height: 1;
+                  @include mixin.afterlineHeight(1);
+                }
+              }
+
+              &__3 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 23px;
+
+                .check {
+                  content: '';
+                  width: 12px;
+                  height: 8px;
+                  border-left: 3px solid #1B224C;
+                  border-bottom: 3px solid #1B224C;
+                  transform: rotate(-45deg);
+                  margin-bottom: 3px;
+                  margin-right: 11.5px;
+                }
+
+                .text {
+                  font-size: 16px;
+                  font-weight: 500;
+                  line-height: 1;
+                  @include mixin.afterlineHeight(1);
+                }
+              }
+
+              &__4 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 23px;
+
+                .check {
+                  content: '';
+                  width: 12px;
+                  height: 8px;
+                  border-left: 3px solid #1B224C;
+                  border-bottom: 3px solid #1B224C;
+                  transform: rotate(-45deg);
+                  margin-bottom: 30px;
+                  margin-right: 11.5px;
+                }
+
+                .text {
+                  font-size: 16px;
+                  font-weight: 500;
+                  line-height: 1.6875;
+                  @include mixin.afterlineHeight(1.6875);
+                }
+              }
+
+              &__5 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 23px;
+
+                .check {
+                  content: '';
+                  width: 12px;
+                  height: 8px;
+                  border-left: 3px solid #1B224C;
+                  border-bottom: 3px solid #1B224C;
+                  transform: rotate(-45deg);
+                  margin-bottom: 3px;
+                  margin-right: 11.5px;
+                }
+
+                .text {
+                  font-size: 16px;
+                  font-weight: 500;
+                  line-height: 1.6875;
+                  @include mixin.afterlineHeight(1.6875);
+                }
+              }
+            }  // .detail
+          }  // .list-contents
+        }  // .list-area__3
+
+         // フレックスプラン
+        &__4 {
+          width: 220px;
+          height: 474px;
+          border: 0.5px solid #1B224C;
+          margin-top: 106px;  // スクロールヒント使用の場合、個々にmargin-top指定
+
+          .list-name {
+            background-color: #1B224C;
+            height: 60px;
+
+            .headline {
+              color: #FFFFFF;
+              font-size: 16px;
+              font-weight: bold;
+              line-height: 60px;
+              text-align: center;
+            }
+          }
+
+          .list-contents {
+            padding-top: 30px;
+            text-align: center;
+
+            @include mixin.tab {
+              padding-right: 23.5px;
+              padding-left: 23.5px;
+            }
+
+            .fee {
+
+              &__value {
+                font-size: 25px;
+                font-weight: bold;
+                line-height: 1;
+                @include mixin.afterlineHeight(1);
+              }
+
+              &__monthly {
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 1;
+                @include mixin.afterlineHeight(1);
+                margin-top: 14px;
+              }
+            }
+
+            .detail {
+              margin-top: 48px;
+
+              &__1 {
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 1;
+                @include mixin.afterlineHeight(1);
+              }
+            }  // .detail
+          }  // .list-contents
+        }  // .list-area__4
+      }  // .list-area
+    }  // .pricing-list
+  }  // .price-main__inner
+}  // .price-main

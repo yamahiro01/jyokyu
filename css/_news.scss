@@ -1,0 +1,262 @@
+@use "mixin";
+@use "header";
+@use "contact";
+@use "footer";
+
+/* ===============================================
+# お知らせメインビジュアル
+=============================================== */
+
+.news-mv {
+  background: url(../img/news.png) no-repeat center center/cover;
+  height: 301px;  // 固定headerぶんの位置調整（+80px）
+  padding-top: 175px;  // 固定headerぶんの位置調整（+80px）
+  text-align: center;
+
+  @include mixin.sp {
+    background-position: 80% 100%;
+  }
+
+  .main-ttl {
+    color: #FFFFFF;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 1;
+    @include mixin.afterlineHeight(1);
+
+    @include mixin.s-tab {
+      font-size: 28px;
+    }
+
+    @include mixin.sp {
+      font-size: 24px;
+    }
+  }
+}
+
+/* ===============================================
+# お知らせパンくずリスト
+=============================================== */
+
+.news-breadcrumb-area {
+  background-color: #F8F8F8;
+  height: 50px;
+
+  .breadcrumbs {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include mixin.tab {
+      width: 90%;
+    }
+
+    span {
+      color: #1B224C;  // パンくずのリンクはcolor指定必要
+      font-size: 12px;
+      line-height: 50px;
+    }
+
+    .home {
+
+      &:hover {
+        text-decoration: underline;
+        text-decoration-color: #1B224C;
+      }
+
+      span {
+
+        &:hover {
+          font-weight: 500;
+        }
+      }
+    }
+
+    .current-item {
+      text-decoration: none;
+    }
+  }
+}  // .breadcrumb-area
+
+/* ===============================================
+# お知らせメインエリア
+=============================================== */
+
+.news-main {
+
+  &__inner {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include mixin.tab {
+      width: 90%;
+    }
+
+    @include mixin.sp {
+      width: 70%;
+    }
+
+    // お知らせ一覧
+    .news-area {
+      background-color: #FFFFFF;
+      padding: 58px 0 71px;
+
+      .main-ttl {
+        font-size: 32px;
+        font-weight: bold;
+        line-height: 1;
+        @include mixin.afterlineHeight(1);
+        text-align: center;
+
+        @include mixin.s-tab {
+          font-size: 28px;
+        }
+
+        @include mixin.sp {
+          font-size: 24px;
+        }
+      }
+
+      .news-list {
+        margin-top: 45px;
+
+        // 各新着お知らせ
+        &__loop {
+          display: flex;
+          padding: 23px 0;
+          border-top: 1px solid #D5D5D5;
+          border-bottom: 1px solid #D5D5D5;
+
+          @include mixin.s-tab {
+            display: block;
+          }
+
+          .date {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1;
+            @include mixin.afterlineHeight(1);
+          }
+
+          .text-link {
+            display: inline-block;
+            color: #1B224C;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1;
+            @include mixin.afterlineHeight(1);
+            text-decoration: underline;
+            text-decoration-color: #1B224C;
+            text-decoration-thickness: 1px;
+            text-decoration-skip-ink: none;
+            margin-left: 51px;
+
+            @include mixin.s-tab {
+              margin-left: 0;
+              margin-top: 20px;
+            }
+
+            @include mixin.sp {
+              line-height: 1.5;
+              @include mixin.afterlineHeight(1.5);
+            }
+          }
+        }  // .news-list__loop
+      }  // .news-list
+    }  // .news-area
+  }  // .news-main__inner
+}  // .news-main
+
+/* ===============================================
+# ページネーション
+=============================================== */
+
+// PC用ページネーション
+.pc-page {
+
+  @include mixin.sp {
+    display: none;
+  }
+
+  .nav-links {
+    text-align: center;
+    margin-bottom: 45px;
+
+    .page-numbers {
+      display: inline-block;
+      background: #FFFFFF;
+      padding: 17px 20px;
+      color: #1B224C;
+      font-weight: bold;
+      border: 1px solid #1B224C;
+      margin-right: 16px;
+    }
+
+    .current {
+      background: #1B224C;
+      padding: 17px 20px;
+      font-weight: bold;
+      color: #FFFFFF;
+    }
+
+    .next {
+      display: none;
+    }
+
+    .prev {
+      display: none;
+    }
+
+    .dots {
+      border: none;
+      font-weight: bold;
+      padding-left: 17px;
+      padding-right: 17px;
+    }
+  }
+}  // .pc-page
+
+// スマホ用ページネーション
+.sp-page {
+  display: none;
+
+  @include mixin.sp {
+    display: block;
+  }
+
+  .pagination {
+    margin-bottom: 45px;
+
+    ul {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      .prev-first {
+        background: #CCCCCC;
+        padding: 19.4px 20px;
+        font-weight: bold;
+        color: #747474;
+        // margin-right: 10px;
+      }
+
+      a {
+        background: #1B224C;
+        padding: 17px 20px;
+        font-weight: bold;
+        color: #FFFFFF;
+        // margin-left: 10px;
+        // margin-right: 10px;
+      }
+
+      .next-last {
+        background: #CCCCCC;
+        padding: 19.4px 20px;
+        font-weight: bold;
+        color: #747474;
+        // margin-left: 10px;
+      }
+    }
+  }
+}  // .sp-page

@@ -1,0 +1,123 @@
+@use "mixin";
+
+// 共通
+body {
+  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+  color: #1B224C;
+  overflow-x: hidden;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 100%;
+}
+
+input {
+	margin: 0;
+	padding: 0;
+	background: none;
+	border: none;
+	border-radius: 0;
+	outline: none;
+  box-sizing: border-box;
+	// -webkit-appearance: none;  ラジオボタンなど表示時は無効にする
+	// -moz-appearance: none;
+	// appearance: none;
+}
+
+textarea {
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// placeholderのスタイリング（input）
+input::-webkit-input-placeholder {
+  color: #B4B4B4;
+  font-size: 12px;
+  font-weight: 500;
+  // padding-left: 20px;  （input本体側で指定する為、消去）
+}
+
+input:-moz-placeholder {
+  color: #B4B4B4;
+  font-size: 12px;
+  font-weight: 500;
+  // padding-left: 20px;
+}
+
+input::-moz-placeholder {
+  color: #B4B4B4;
+  font-size: 12px;
+  font-weight: 500;
+  // padding-left: 20px;
+}
+
+input:-ms-input-placeholder {
+  color: #B4B4B4;
+  font-size: 12px;
+  font-weight: 500;
+  // padding-left: 20px;
+}
+
+// placeholderのスタイリング（textarea）
+textarea::-webkit-input-placeholder {
+  color: #B4B4B4;
+  font-size: 12px;
+  font-weight: 500;
+  // padding-top: 22px; （textarea本体側で指定する為、消去）
+  // padding-left: 23px;
+}
+
+textarea:-moz-placeholder {
+  color: #B4B4B4;
+  font-size: 12px;
+  font-weight: 500;
+  // padding-top: 22px;
+  // padding-left: 23px;
+}
+
+textarea::-moz-placeholder {
+  color: #B4B4B4;
+  font-size: 12px;
+  font-weight: 500;
+  // padding-top: 22px;
+  // padding-left: 23px;
+}
+
+textarea:-ms-input-placeholder {
+  color: #B4B4B4;
+  font-size: 12px;
+  font-weight: 500;
+  // padding-top: 22px;
+  // padding-left: 23px;
+}
+
+
+button{
+  display: inline-block;
+  text-decoration: none;
+  outline: none;
+  padding: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+#wrapper {
+  width: 100%;
+  overflow: hidden !important;  // overflow-xのみでは2本スクロールバーが出てしまう
+}
+
+a {
+  text-decoration: none;
+  // color: #FFFFFF;  // Wordpressでは適用禁止
+}
+
+// common.scssでのimgの指定は禁止
+// img {
+//   width: 100%;  //Swiper対策の為、max-widthの使用禁止
+//   height: auto;
+// }
